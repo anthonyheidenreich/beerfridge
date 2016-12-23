@@ -1,0 +1,24 @@
+- model: beer.Location
+  pk: studio-fridge
+  fields:
+    name: Studio Fridge
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Location
+  pk: inside-fridge
+  fields:
+    name: Inside Fridge
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Location
+  pk: studio
+  fields:
+    name: Studio
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Location
+  pk: inside
+  fields:
+    name: Inside
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
