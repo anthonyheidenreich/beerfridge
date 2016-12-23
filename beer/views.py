@@ -1,6 +1,13 @@
 from beer.models import Beer, Brewery, Location, Glassware
 from beer.serializers import BeerSerializer, BrewerySerializer, LocationSerializer, GlasswareSerializer
 from rest_framework import generics
+from django.template import loader
+from django.shortcuts import render
+
+
+def index(request):
+    context = { }
+    return render(request, 'index.html', context)
 
 
 class BeerList(generics.ListCreateAPIView):
