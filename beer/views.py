@@ -29,14 +29,14 @@ class BreweryBeerList(generics.ListAPIView):
     serializer_class = BeerSerializer
 
     def get_queryset(self):
-        return Beer.objects.filter(brewery=self.kwargs['brewery'])
+        return Beer.objects.filter(brewery=self.kwargs['pk'])
 
 
 class BreweryGlasswareList(generics.ListAPIView):
     serializer_class = GlasswareSerializer
 
     def get_queryset(self):
-        return Glassware.objects.filter(brewery=self.kwargs['brewery'])
+        return Glassware.objects.filter(brewery=self.kwargs['pk'])
 
 
 class BreweryDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -53,7 +53,7 @@ class LocationBeerList(generics.ListAPIView):
     serializer_class = BeerSerializer
 
     def get_queryset(self):
-        return Beer.objects.filter(location=self.kwargs['location'])
+        return Beer.objects.filter(location=self.kwargs['pk'])
 
 
 class LocationDetail(generics.RetrieveUpdateDestroyAPIView):

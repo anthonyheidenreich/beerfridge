@@ -115,14 +115,14 @@ for styles in BEER_STYLES.values():
 	BEER_STYLE_CHOICES.extend([(style, style) for style in styles])
 
 GLASSWARE_STYLES = [
-    ('BOOTS', 'Boots'),
-    ('MUGS', 'Mugs'),
-    ('GOBLETS', 'Goblets'),
-    ('FLUTES', 'Flutes'),
+    ('BOOT', 'Boot'),
+    ('MUG', 'Mug'),
+    ('GOBLET', 'Goblet'),
+    ('FLUTE', 'Flute'),
     ('NOVELTY', 'Novelty'),
-    ('PILSNERS', 'Pilsners'),
-    ('PINTS', 'Pints'),
-    ('STEINS', 'Steins'),
+    ('PILSNER', 'Pilsner'),
+    ('PINT', 'Pint'),
+    ('STEIN', 'Stein'),
     ('TASTER', 'Taster'),
-    ('TULIPS', 'Tulips'),
+    ('TULIP', 'Tulip'),
 ]

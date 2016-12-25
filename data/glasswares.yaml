@@ -1,0 +1,44 @@
+- model: beer.Glassware
+  pk: 1
+  fields:
+    style: "BOOT"
+    description: "Flying Saucer 2016"
+    quantity: 1
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Glassware
+  pk: 2
+  fields:
+    style: "PINT"
+    description: "512 Logo"
+    quantity: 1
+    brewery: 512-brewing
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Glassware
+  pk: 3
+  fields:
+    style: "TASTER"
+    description: "Red Logo"
+    quantity: 1
+    brewery: draughthouse
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Glassware
+  pk: 4
+  fields:
+    style: "TASTER"
+    description: "White Logo"
+    quantity: 1
+    brewery: draughthouse
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Glassware
+  pk: 5
+  fields:
+    style: "TASTER"
+    description: "Yellow Logo"
+    quantity: 1
+    brewery: draughthouse
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"

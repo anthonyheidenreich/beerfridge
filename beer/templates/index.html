@@ -34,42 +34,211 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Beer Fridge</a>
+            <a class="navbar-brand" href="/">Beer Fridge</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Beers</a></li>
-              <li><a href="#">Glassware</a></li>
-              <li><a href="#">Breweries</a></li>
-              <li><a href="#">Locations</a></li>
+              <li class="home active"><a href="#home">Home</a></li>
+              <li class="beers"><a href="#beers">Beers</a></li>
+              <li class="glasswares"><a href="#glasswares">Glassware</a></li>
+              <li class="breweries"><a href="#breweries">Breweries</a></li>
+              <li class="locations"><a href="#locations">Locations</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+      <div class="container marketing" id="content">
       </div>
 
     </div> <!-- /container -->
 
+    <script type="text/html" id="template-home">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Beers</h2>
+          <p>See the list of beers currently available.</p>
+          <p class="nav"><a class="btn btn-default" href="#beers" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+          <h2>Glassware</h2>
+          <p>See the list of glassware currently available.</p>
+          <p class="nav"><a class="btn btn-default" href="#glasswares" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+          <h2>Breweries</h2>
+          <p>See the list of breweries currently in the system.</p>
+          <p class="nav"><a class="btn btn-default" href="#breweries" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+          <h2>Locations</h2>
+          <p>See the list of locations where beers and glassware are stored.</p>
+          <p class="nav"><a class="btn btn-default" href="#locations" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+    </script>
+
+    <script type="text/html" id="template-beers">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Style</th>
+            <th>Quantity</th>
+            <th>Brewery</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(beers.results, function(beer){ %>
+            <tr>
+              <td><%= beer.name %></td>
+              <td><%= beer.style %></td>
+              <td><%= beer.quantity %></td>
+              <td><a href="#breweries/<%= beer.brewery %>/beers"><%= beer.brewery %></a></td>
+              <td><a href="#locations/<%= beer.location %>/beers"><%= beer.location %></a></td>
+            </tr>
+          <% }); %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <% if (beers.previous) { %>
+                <a href="#<%= beers.previous.replace(api_base, '') %>">Previous</a>
+              <% } %>
+            </td>
+            <td colspan="3"></td>
+            <td class="text-right">
+              <% if (beers.next) { %>
+                <a href="#<%= beers.next.replace(api_base, '') %>">Next</a>
+              <% } %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </script>
+
+    <script type="text/html" id="template-breweries">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(breweries.results, function(brewery){ %>
+            <tr>
+              <td><%= brewery.name %></td>
+              <td><%= brewery.city %></td>
+              <td><%= brewery.state %></td>
+              <td>
+                <a href="#breweries/<%= brewery.id %>/beers">beers</a>
+                | <a href="#breweries/<%= brewery.id %>/glassware">glasses</a>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <% if (breweries.previous) { %>
+                <a href="#<%= breweries.previous.replace(api_base, '') %>">Previous</a>
+              <% } %>
+            </td>
+            <td colspan="2"></td>
+            <td class="text-right">
+              <% if (breweries.next) { %>
+                <a href="#<%= breweries.next.replace(api_base, '') %>">Next</a>
+              <% } %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </script>
+
+    <script type="text/html" id="template-glasswares">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Brewery</th>
+            <th>Style</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(glasswares.results, function(glassware){ %>
+            <tr>
+              <td><%= glassware.description %></td>
+              <td><a href="#breweries/<%= glassware.brewery %>/glasswares"><%= glassware.brewery %></a></td>
+              <td><%= glassware.style %></td>
+              <td><%= glassware.quantity %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <% if (glasswares.previous) { %>
+                <a href="#<%= glasswares.previous.replace(api_base, '') %>">Previous</a>
+              <% } %>
+            </td>
+            <td colspan="2"></td>
+            <td class="text-right">
+              <% if (glasswares.next) { %>
+                <a href="#<%= glasswares.next.replace(api_base, '') %>">Next</a>
+              <% } %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </script>
+
+    <script type="text/html" id="template-locations">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(locations.results, function(location){ %>
+            <tr>
+              <td><%= location.name %></td>
+              <td>
+                <a href="#locations/<%= location.id %>/beers">beers</a>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <% if (locations.previous) { %>
+                <a href="#<%= locations.previous.replace(api_base, '') %>">Previous</a>
+              <% } %>
+            </td>
+            <td class="text-right">
+              <% if (locations.next) { %>
+                <a href="#<%= locations.next.replace(api_base, '') %>">Next</a>
+              <% } %>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="{% static 'js/core.js' %}"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
