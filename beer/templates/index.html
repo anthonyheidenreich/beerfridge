@@ -24,6 +24,17 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      .link {
+        cursor:pointer;
+      }
+      th .link {
+        color: #337ab7;
+      }
+      .link:hover {
+        text-decoration:underline;
+      }
+    </style>
   </head>
 
   <body>
@@ -82,11 +93,36 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Style</th>
-            <th>Quantity</th>
-            <th>Brewery</th>
-            <th>Location</th>
+            <th class="col-md-4">
+              <span class="link ordering" data-field="<%= params.ordering == '+name' || params.ordering == '' ? '-' : '+' %>name">Name
+                <% if (params.ordering.contains('name') || params.ordering == '') { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-3">
+              <span class="link ordering" data-field="<%= params.ordering == '+style' ? '-' : '+' %>style">Style
+                <% if (params.ordering.contains('style')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-1">Quantity</th>
+            <th class="col-md-2">
+              <span class="link ordering" data-field="<%= params.ordering == '+brewery' ? '-' : '+' %>brewery">Brewery
+                <% if (params.ordering.contains('brewery')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-2">
+              <span class="link ordering" data-field="<%= params.ordering == '+location' ? '-' : '+' %>location">Location
+                <% if (params.ordering.contains('location')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-1"></th>
           </tr>
         </thead>
         <tbody>
@@ -97,6 +133,11 @@
               <td><%= beer.quantity %></td>
               <td><a href="#breweries/<%= beer.brewery %>/beers"><%= beer.brewery %></a></td>
               <td><a href="#locations/<%= beer.location %>/beers"><%= beer.location %></a></td>
+              <td>
+                  <span class="link glyphicon glyphicon-chevron-right toggle" title="More Actions">
+                    <span class="link delete btn btn-xs btn-danger hide" title="Remove Beer" data-uri="beers/<%= beer.id %>"><span class="glyphicon glyphicon-remove danger"></span></span>
+                  </span>
+              </td>
             </tr>
           <% }); %>
         </tbody>
@@ -116,16 +157,106 @@
           </tr>
         </tfoot>
       </table>
+      <div class="row">
+        <form method="POST" action="#beers" class="form-horizontal">
+          <fieldset>
+
+          <!-- Form Name -->
+          <legend>Add a Beer</legend>
+
+          <div class="row">
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="beer-name">Name</label>
+              <div class="col-md-5">
+                <input id="beer-name" name="name" type="text" placeholder="" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="beer-brewery">Brewery</label>
+              <div class="col-md-5">
+                <select id="beer-brewery" name="brewery" class="form-control">
+                <% _.each(options.breweries, function(brewery){ %>
+                  <option value="<%= brewery.id %>"><%= brewery.name %></option>
+                <% }); %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="beer-style">Style</label>
+              <div class="col-md-5">
+                <select id="beer-style" name="style" class="form-control">
+                  <% _.each(options['beer-styles'], function(styles, group){ %>
+                    <optgroup label="<%= group %>">
+                      <% _.each(styles, function(style){ %>
+                        <option value="<%= style %>"><%= style %></option>
+                      <% }); %>
+                    </optgroup>
+                  <% }); %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="beer-location">Location</label>
+              <div class="col-md-5">
+                <select id="beer-location" name="location" class="form-control">
+                <% _.each(locations.results, function(location){ %>
+                  <option value="<%= location.id %>"><%= location.name %></option>
+                <% }); %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="beer-quantity">Quantity</label>
+              <div class="col-md-1">
+              <input id="beer-quantity" name="quantity" type="text" placeholder="" class="form-control input-md" required="" value="1" />
+              </div>
+              <div class="col-md-4">
+                <button id="beer-add" name="add" class="btn btn-success">Add</button>
+              </div>
+            </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </script>
 
     <script type="text/html" id="template-breweries">
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>State</th>
-            <th>links</th>
+            <th class="col-md-4">
+              <span class="link ordering" data-field="<%= params.ordering == '-name' || params.ordering == '' ? '-' : '+' %>name">Name
+                <% if (params.ordering.contains('name') || params.ordering == '') { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-3">
+              <span class="link ordering" data-field="<%= params.ordering == '+city' ? '-' : '+' %>city">City
+                <% if (params.ordering.contains('city')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-2">
+              <span class="link ordering" data-field="<%= params.ordering == '+state' ? '-' : '+' %>state">State
+                <% if (params.ordering.contains('state')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-2">links</th>
           </tr>
         </thead>
         <tbody>
@@ -157,16 +288,85 @@
           </tr>
         </tfoot>
       </table>
+      <div class="row">
+        <form method="POST" action="#breweries" class="form-horizontal">
+          <fieldset>
+
+          <!-- Form Name -->
+          <legend>Add a Brewery</legend>
+
+          <div class="row">
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="brewery-id">Name</label>
+              <div class="col-md-5">
+                <input id="brewery-id" name="name" type="text" placeholder="Slug ID i.e. brewing-brewery-co" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="brewery-name">Name</label>
+              <div class="col-md-5">
+                <input id="brewery-name" name="name" type="text" placeholder="" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="brewery-city">City</label>
+              <div class="col-md-5">
+                <input id="brewery-city" name="city" type="text" placeholder="" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="brewery-state">State</label>
+              <div class="col-md-1">
+              <input id="brewery-state" name="state" type="text" placeholder="" class="form-control input-md" required="" />
+              </div>
+              <div class="col-md-4">
+                <button id="brewery-add" name="add" class="btn btn-success">Add</button>
+              </div>
+            </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </script>
 
     <script type="text/html" id="template-glasswares">
       <table class="table">
         <thead>
           <tr>
-            <th>Description</th>
-            <th>Brewery</th>
-            <th>Style</th>
+            <th class="col-md-4">
+              <span class="link ordering" data-field="<%= params.ordering == '+description' ? '-' : '+' %>description">Description
+                <% if (params.ordering.contains('description')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-3">
+              <span class="link ordering" data-field="<%= params.ordering == '+brewery' || params.ordering == '' ? '-' : '+' %>brewery">Brewery
+                <% if (params.ordering.contains('brewery') || params.ordering == '') { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
+            <th class="col-md-3">
+              <span class="link ordering" data-field="<%= params.ordering == '+style' ? '-' : '+' %>style">Style
+                <% if (params.ordering.contains('style')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
             <th>Quantity</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -176,6 +376,11 @@
               <td><a href="#breweries/<%= glassware.brewery %>/glasswares"><%= glassware.brewery %></a></td>
               <td><%= glassware.style %></td>
               <td><%= glassware.quantity %></td>
+              <td>
+                <span class="link glyphicon glyphicon-chevron-right toggle" title="More Actions">
+                  <span class="link delete btn btn-xs btn-danger hide" data-uri="glasswares/<%= glassware.id %>"><span class="glyphicon glyphicon-remove danger"></span></span>
+                </span>
+            </td>
             </tr>
           <% }); %>
         </tbody>
@@ -195,6 +400,55 @@
           </tr>
         </tfoot>
       </table>
+      <div class="row">
+        <form method="POST" action="#glasswares" class="form-horizontal">
+          <fieldset>
+
+          <!-- Form Name -->
+          <legend>Add a Glass</legend>
+
+          <div class="row">
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="glassware-description">Name</label>
+              <div class="col-md-5">
+                <input id="glassware-description" name="description" type="text" placeholder="" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="glassware-brewery">Brewery</label>
+              <div class="col-md-5">
+                <select id="glassware-brewery" name="brewery" class="form-control">
+                  <option>None</option>
+                <% _.each(breweries.results, function(brewery){ %>
+                  <option value="<%= brewery.id %>"><%= brewery.name %></option>
+                <% }); %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="glassware-style">Style</label>
+              <div class="col-md-3">
+                <select id="glassware-style" name="style" class="form-control">
+                  <% _.each(options['glassware-styles'], function(style){ %>
+                      <option value="<%= style[0] %>"><%= style[1] %></option>
+                  <% }); %>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <button id="glassware-add" name="add" class="btn btn-success">Add</button>
+              </div>
+            </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </script>
 
     <script type="text/html" id="template-locations">
@@ -230,6 +484,44 @@
           </tr>
         </tfoot>
       </table>
+      <div class="row">
+        <form method="POST" action="#locations" class="form-horizontal">
+          <fieldset>
+
+          <!-- Form Name -->
+          <legend>Add a Location</legend>
+
+          <div class="row">
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="location-id">Name</label>
+              <div class="col-md-5">
+                <input id="location-id" name="name" type="text" placeholder="Slug ID i.e. inside-fridge" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="location-name">Name</label>
+              <div class="col-md-5">
+                <input id="location-name" name="name" type="text" placeholder="" class="form-control input-md" required="" />
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="location-quantity"></label>
+              <div class="col-md-4">
+                <button id="add" name="add" class="btn btn-success">Add</button>
+              </div>
+            </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </script>
 
     <!-- Bootstrap core JavaScript

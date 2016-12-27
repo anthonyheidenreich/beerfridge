@@ -1,7 +1,6 @@
 BEER_STYLES = {
     'Pale Ales': [
         'American Amber Ale',
-        'American Pale Ale',
         'English-Style Bitter',
         'Blonde Ale',
         'English-Style Pale Ale (ESB)',
@@ -20,6 +19,8 @@ BEER_STYLES = {
     ],
     'India Pale Ales': [
         'American IPA',
+        'Session IPA',
+        'Brett IPA',
         'English-Style IPA',
         'Imperial India Pale Ale',
     ],
@@ -33,6 +34,7 @@ BEER_STYLES = {
     ],
     'Strong Ales': [
         'American Barley Wine',
+        'American Strong Ale',
         'American Imperial Red Ale',
         'British-Style Barley Wine Ale',
         'English-Style Old Ale',
@@ -64,6 +66,7 @@ BEER_STYLES = {
     ],
     'Stouts': [
         'American Imperial Stout',
+        'Russian Imperial Stout',
         'American Stout',
         'English-Style Oatmeal Stout',
         'English-Style Sweet Stout (Milk Stout)',
@@ -85,10 +88,12 @@ BEER_STYLES = {
         'Belgian-Style Flanders',
         'Belgian-Style Fruit Lambic',
         'Belgian-Style Lambic/Gueuze',
+        'Sour Stout',
         'Contemporary Gose',
     ],
     'Pilseners and Pale Lagers': [
         'American Lager',
+        'Inida Pale Lager',
         'Bohemian-Style Pilsener',
         'European-Style Export',
         'German-Style Helles',
@@ -102,6 +107,7 @@ BEER_STYLES = {
         'Fruit and Field Beer',
         'Gluten Free',
         'Herb and Spice Beer',
+        'Winter Warmer',
         'Honey Beer',
         'Pumpkin Beer',
         'Rye Beer',

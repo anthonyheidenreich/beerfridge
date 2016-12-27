@@ -215,7 +215,7 @@
     created_at: "2016-12-21T18:00:00+00:00"
     updated_at: "2016-12-21T18:00:00+00:00"
 - model: beer.Brewery
-  pk: NXNW
+  pk: nxnw
   fields:
     name: NXNW
     city: Austin
@@ -434,13 +434,165 @@
   pk: deschutes
   fields:
     name: Deschutes
+    city: Bend
     state: OR
     created_at: "2016-12-21T18:00:00+00:00"
     updated_at: "2016-12-21T18:00:00+00:00"
 - model: beer.Brewery
-  pk: lagunitas
+  pk: sierra-nevada
   fields:
-    name: Lagunitas
+    name: Sierra Nevada
+    city: Chico
     state: CA
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: samuel-adams
+  fields:
+    name: Samuel Adams
+    city: boston
+    state: MA
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: new-belgium
+  fields:
+    name: New Belgium
+    city: Fort Collins
+    state: CO
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: epic-brewing
+  fields:
+    name: Epic Brewing
+    city: Salt Lake City
+    state: UT
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: founders
+  fields:
+    name: Founders
+    city: Grand Rapids
+    state: MI
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: ballast-point
+  fields:
+    name: Ballast Point
+    city: San Diego
+    state: CA
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: texian-brewing
+  fields:
+    name: Texian Brewing Company
+    city: Richmond
+    state: TX
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: jolly-pumpkin
+  fields:
+    name: Jolly Pumpkin
+    city: Dexter
+    state: MI
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: lakewood-brewing
+  fields:
+    name: Lakewood Brewing Co.
+    city: Dallas
+    state: TX
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: anderson-valley
+  fields:
+    name: Anderson Valley
+    city: Boonville
+    state: CA
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: boulevard
+  fields:
+    name: Boulevard Brewing
+    city: Kansas City
+    state: MO
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: freetail
+  fields:
+    name: Freetail Brewing Co
+    city: San Antonio
+    state: TX
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: prairie-artisan-ales
+  fields:
+    name: Prairie Artisan Ales
+    city: Krebs
+    state: OK
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: big-sky-brewing
+  fields:
+    name: Big Sky Brewing
+    city: Missoula
+    state: MT
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: dogfish-head
+  fields:
+    name: Dogfish Headx
+    city: Milton
+    state: DE
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: victory
+  fields:
+    name: Victory Brewing Co
+    city: Downington
+    state: PA
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: vander-ghinste
+  fields:
+    name: Omer Vander Ghinste Brewery
+    state: Belgiumx
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: ommegang
+  fields:
+    name: Ommegang
+    city: Cooperstown
+    state: NY
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: great-divide
+  fields:
+    name: Great Divide Brewing Company
+    city: Denver
+    state: CO
+    created_at: "2016-12-21T18:00:00+00:00"
+    updated_at: "2016-12-21T18:00:00+00:00"
+- model: beer.Brewery
+  pk: brouwerij-the-musketeers
+  fields:
+    name: Brouwerij The Musketeers (De Musketiers)
+    state: Belgium
     created_at: "2016-12-21T18:00:00+00:00"
     updated_at: "2016-12-21T18:00:00+00:00"

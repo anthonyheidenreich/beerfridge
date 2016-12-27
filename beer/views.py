@@ -1,8 +1,22 @@
+from beer.constants import BEER_STYLES, GLASSWARE_STYLES
 from beer.models import Beer, Brewery, Location, Glassware
 from beer.serializers import BeerSerializer, BrewerySerializer, LocationSerializer, GlasswareSerializer
-from rest_framework import generics
-from django.template import loader
 from django.shortcuts import render
+from django.template import loader
+from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+@api_view()
+def options(request):
+    breweries = Brewery.objects.all()
+    serializer = BrewerySerializer(breweries, context={'request': request}, many=True)
+    return Response({
+        'beer-styles': BEER_STYLES,
+        'glassware-styles': GLASSWARE_STYLES,
+        'breweries': serializer.data,
+    })
 
 
 def index(request):

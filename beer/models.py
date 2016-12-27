@@ -21,7 +21,7 @@ class Brewery(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('id',)
+        ordering = ('name',)
 
 
 class Beer(models.Model):
@@ -34,7 +34,7 @@ class Beer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('id',)
+        ordering = ('name', 'brewery')
 
 
 class Glassware(models.Model):
@@ -46,4 +46,4 @@ class Glassware(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('id',)
+        ordering = ('brewery', 'style')

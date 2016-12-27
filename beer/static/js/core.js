@@ -1,8 +1,18 @@
+String.prototype.contains = function contains(match) { return this.indexOf(match) !== -1; }
+
 var PageController = function() {
     var self = this;
 
     self.data = {};
     self.data.api_base = window.location.origin + '/v1/';
+    self.data.beers = {results: []}
+    self.data.breweries = {results: []}
+    self.data.options = {}
+    self.data.glasswares = {results: []}
+    self.data.locations = {results: []}
+    self.data.params = {
+        'ordering': '',
+    };
 
     self.target = {};
     self.target.content = $('#content');
@@ -19,19 +29,68 @@ var PageController = function() {
         $(document).on('click', 'a', function(el) {
             el.preventDefault();
             window.location.hash = this.hash;
-            self.page.set(this.hash.replace('#', ''));
+            self.page.set();
             self.render.page();
         });
 
-        self.page.set(window.location.hash.replace('#', ''));
-        self.render.page();
+        $(document).on('click', '.link.ordering', function(el) {
+            link = $(this);
+            splitter = window.location.hash.contains('/?') ? '/?' : '?';
+            hash = window.location.hash.split(splitter);
+            window.location.hash = hash[0] + '/?ordering=' + link.data('field');
+            self.page.set();
+            self.render.page();
+        });
+
+        $(document).on('click', '.link.toggle', function(el) {
+            var link = $(this);
+            link.find('.btn').removeClass('hide');
+            link.removeClass('glyphicon-chevron-right');
+        });
+
+        $(document).on('click', '.link.delete', function(el) {
+            var link = $(this);
+            $.ajax({
+                url: self.data.api_base + link.data('uri'),
+                method: 'DELETE',
+                success: function(result) {
+                    link.closest('tr').hide();
+                }
+            });
+        });
+
+        $(document).on('submit', 'form', function(el) {
+            el.preventDefault();
+            form = $(this);
+            console.log(form);
+        });
+
+        self.page.set();
+
+        $.getJSON('/v1/options', function(data) {
+            self.data.options = data;
+            $.getJSON('/v1/breweries', function(data) {
+                self.data.breweries = data;
+                $.getJSON('/v1/locations', function(data) {
+                    self.data.locations = data;
+                    self.render.page();
+                });
+            });
+        });
     }
 
     self.page = {};
 
-    self.page.set = function(path) {
-        self.data.path = path;
-        parts = self.data.path.replace(/\/+$/, '').split('/?');
+    self.page.set = function() {
+        self.data.path = window.location.hash.replace('#', '');
+        splitter = window.location.hash.contains('/?') ? '/?' : '?';
+        parts = self.data.path.replace(/\/+$/, '').split(splitter);
+        params = parts[parts.length-1].split('&');
+        self.data.params = { 'ordering': '', }
+        for (i=0; i < params.length; i++) {
+            param = params[i].split('=', 2);
+            self.data.params[param[0]] = param[1];
+        }
         parts = parts[0].split('/');
         self.data.template = parts[parts.length-1];
         if (!self.data.template) { self.data.template = 'home'; }
