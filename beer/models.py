@@ -15,7 +15,7 @@ class Location(models.Model):
 class Brewery(models.Model):
     id = models.SlugField(primary_key=True)
     name = models.CharField(max_length=100, blank=False)
-    city = models.CharField(max_length=100)
+    city = models.CharField(max_length=100, blank=True)
     state = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

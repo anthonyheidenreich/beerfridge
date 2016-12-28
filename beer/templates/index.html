@@ -49,7 +49,6 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="home active"><a href="#home">Home</a></li>
               <li class="beers"><a href="#beers">Beers</a></li>
               <li class="glasswares"><a href="#glasswares">Glassware</a></li>
               <li class="breweries"><a href="#breweries">Breweries</a></li>
@@ -107,7 +106,13 @@
                   <% } %>
               </span>
             </th>
-            <th class="col-md-1">Quantity</th>
+            <th class="col-md-1">
+              <span class="link ordering" data-field="<%= params.ordering == '+quantity' ? '-' : '+' %>quantity">Quantity
+                <% if (params.ordering.contains('quantity')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
             <th class="col-md-2">
               <span class="link ordering" data-field="<%= params.ordering == '+brewery' ? '-' : '+' %>brewery">Brewery
                 <% if (params.ordering.contains('brewery')) { %>
@@ -145,20 +150,20 @@
           <tr>
             <td>
               <% if (beers.previous) { %>
-                <a href="#<%= beers.previous.replace(api_base, '') %>">Previous</a>
+                <a href="#<%= beers.previous.replace(api.base, '') %>">Previous</a>
               <% } %>
             </td>
             <td colspan="3"></td>
             <td class="text-right">
               <% if (beers.next) { %>
-                <a href="#<%= beers.next.replace(api_base, '') %>">Next</a>
+                <a href="#<%= beers.next.replace(api.base, '') %>">Next</a>
               <% } %>
             </td>
           </tr>
         </tfoot>
       </table>
       <div class="row">
-        <form method="POST" action="#beers" class="form-horizontal">
+        <form method="POST" action="<%= api.version %>/beers" class="form-horizontal">
           <fieldset>
 
           <!-- Form Name -->
@@ -222,7 +227,13 @@
               </div>
               <div class="col-md-4">
                 <button id="beer-add" name="add" class="btn btn-success">Add</button>
+                <input type="reset" class="btn btn-primary" />
               </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-6 alert hide result"> </div>
             </div>
 
             </fieldset>
@@ -276,20 +287,20 @@
           <tr>
             <td>
               <% if (breweries.previous) { %>
-                <a href="#<%= breweries.previous.replace(api_base, '') %>">Previous</a>
+                <a href="#<%= breweries.previous.replace(api.base, '') %>">Previous</a>
               <% } %>
             </td>
             <td colspan="2"></td>
             <td class="text-right">
               <% if (breweries.next) { %>
-                <a href="#<%= breweries.next.replace(api_base, '') %>">Next</a>
+                <a href="#<%= breweries.next.replace(api.base, '') %>">Next</a>
               <% } %>
             </td>
           </tr>
         </tfoot>
       </table>
       <div class="row">
-        <form method="POST" action="#breweries" class="form-horizontal">
+        <form method="POST" action="<%= api.version %>/breweries" class="form-horizontal">
           <fieldset>
 
           <!-- Form Name -->
@@ -298,9 +309,9 @@
           <div class="row">
             <!-- Text input-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="brewery-id">Name</label>
+              <label class="col-md-4 control-label" for="brewery-id">ID</label>
               <div class="col-md-5">
-                <input id="brewery-id" name="name" type="text" placeholder="Slug ID i.e. brewing-brewery-co" class="form-control input-md" required="" />
+                <input id="brewery-id" name="id" type="text" placeholder="Slug ID i.e. brewing-brewery-co" class="form-control input-md" required="" />
 
               </div>
             </div>
@@ -318,7 +329,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="brewery-city">City</label>
               <div class="col-md-5">
-                <input id="brewery-city" name="city" type="text" placeholder="" class="form-control input-md" required="" />
+                <input id="brewery-city" name="city" type="text" placeholder="" class="form-control input-md" />
 
               </div>
             </div>
@@ -331,7 +342,13 @@
               </div>
               <div class="col-md-4">
                 <button id="brewery-add" name="add" class="btn btn-success">Add</button>
+                <input type="reset" class="btn btn-primary" />
               </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-6 alert hide result"> </div>
             </div>
 
             </fieldset>
@@ -365,8 +382,13 @@
                   <% } %>
               </span>
             </th>
-            <th>Quantity</th>
-            <th></th>
+            <th class="col-md-1" colspan="2">
+              <span class="link ordering" data-field="<%= params.ordering == '+quantity' ? '-' : '+' %>quantity">Quantity
+                <% if (params.ordering.contains('quantity')) { %>
+                  <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
+                  <% } %>
+              </span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -388,20 +410,20 @@
           <tr>
             <td>
               <% if (glasswares.previous) { %>
-                <a href="#<%= glasswares.previous.replace(api_base, '') %>">Previous</a>
+                <a href="#<%= glasswares.previous.replace(api.base, '') %>">Previous</a>
               <% } %>
             </td>
             <td colspan="2"></td>
             <td class="text-right">
               <% if (glasswares.next) { %>
-                <a href="#<%= glasswares.next.replace(api_base, '') %>">Next</a>
+                <a href="#<%= glasswares.next.replace(api.base, '') %>">Next</a>
               <% } %>
             </td>
           </tr>
         </tfoot>
       </table>
       <div class="row">
-        <form method="POST" action="#glasswares" class="form-horizontal">
+        <form method="POST" action="<%= api.version %>/glasswares" class="form-horizontal">
           <fieldset>
 
           <!-- Form Name -->
@@ -442,7 +464,13 @@
               </div>
               <div class="col-md-3">
                 <button id="glassware-add" name="add" class="btn btn-success">Add</button>
+                <input type="reset" class="btn btn-primary" />
               </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-6 alert hide result"> </div>
             </div>
 
             </fieldset>
@@ -473,19 +501,19 @@
           <tr>
             <td>
               <% if (locations.previous) { %>
-                <a href="#<%= locations.previous.replace(api_base, '') %>">Previous</a>
+                <a href="#<%= locations.previous.replace(api.base, '') %>">Previous</a>
               <% } %>
             </td>
             <td class="text-right">
               <% if (locations.next) { %>
-                <a href="#<%= locations.next.replace(api_base, '') %>">Next</a>
+                <a href="#<%= locations.next.replace(api.base, '') %>">Next</a>
               <% } %>
             </td>
           </tr>
         </tfoot>
       </table>
       <div class="row">
-        <form method="POST" action="#locations" class="form-horizontal">
+        <form method="POST" action="<%= api.version %>/locations" class="form-horizontal">
           <fieldset>
 
           <!-- Form Name -->
@@ -515,7 +543,13 @@
               <label class="col-md-4 control-label" for="location-quantity"></label>
               <div class="col-md-4">
                 <button id="add" name="add" class="btn btn-success">Add</button>
+                <input type="reset" class="btn btn-primary" />
               </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-6 alert hide result"> </div>
             </div>
 
             </fieldset>

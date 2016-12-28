@@ -4,7 +4,9 @@ var PageController = function() {
     var self = this;
 
     self.data = {};
-    self.data.api_base = window.location.origin + '/v1/';
+    self.data.api = { }
+    self.data.api.version = 'v1'
+    self.data.api.base = window.location.origin + '/' + self.data.api.version + '/';
     self.data.beers = {results: []}
     self.data.breweries = {results: []}
     self.data.options = {}
@@ -24,6 +26,7 @@ var PageController = function() {
     self.template.breweries = $('#template-breweries').html();
     self.template.locations = $('#template-locations').html();
     self.template.glasswares = $('#template-glasswares').html();
+    self.template.errors = '<ul class="list-unstyled"><% _.each(errors, function(error, field) { %><li><%= field %>: <%= error %></li><% }); %></ul>';
 
     var init = function() {
         $(document).on('click', 'a', function(el) {
@@ -51,7 +54,7 @@ var PageController = function() {
         $(document).on('click', '.link.delete', function(el) {
             var link = $(this);
             $.ajax({
-                url: self.data.api_base + link.data('uri'),
+                url: self.data.api.base + link.data('uri'),
                 method: 'DELETE',
                 success: function(result) {
                     link.closest('tr').hide();
@@ -62,7 +65,21 @@ var PageController = function() {
         $(document).on('submit', 'form', function(el) {
             el.preventDefault();
             form = $(this);
-            console.log(form);
+            var result_field = form.find('.result');
+            result_field.removeClass('hide alert-success alert-danger').html('');
+            $.ajax({
+                url: form.prop('action'),
+                method: form.prop('method'),
+                dataType : 'json',
+                data: form.serialize(),
+                success: function(result) {
+                    result_field.addClass('alert-success').html('Success!');
+                    form[0].reset();
+                },
+                error: function(result) {
+                    result_field.addClass('alert-danger').html(_.template(self.template.errors)({'errors': result.responseJSON}));
+                }
+            });
         });
 
         self.page.set();
