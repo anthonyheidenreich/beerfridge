@@ -5,6 +5,10 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: 'us-west-2:43d6d9cb-2f64-4f07-bb19-d46554d40723',
 });
 
+var AUTH0_CLIENT_ID='1hqQ9GUYAdeni5J7g5FZFZgY0BBx9alp';
+var AUTH0_DOMAIN='bieraustin.auth0.com';
+var AUTH0_CALLBACK_URL=location.href;
+
 function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -23,6 +27,7 @@ var PageController = function() {
     self.data.api = {};
     self.data.api.version = 'v1';
     self.data.api.base = window.location.origin + '/' + self.data.api.version + '/';
+    self.data.token = undefined;
     self.data.aws = {};
     self.data.aws.bucket = 'bieraustin';
     self.data.aws.album = 'beerfridge/';
@@ -31,19 +36,21 @@ var PageController = function() {
     self.data.options = {}
     self.data.glasswares = {results: []}
     self.data.locations = {results: []}
-    self.data.params = {
-        'ordering': '',
-    };
+    self.data.params = { 'ordering': '', };
 
     self.s3 = new AWS.S3({
                         apiVersion: '2006-03-01',
                         params: {Bucket: self.data.aws.bucket}
                     });
 
+    self.lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
+        auth: { params: { scope: 'openid email' } }
+    });
 
     self.target = {};
     self.target.content = $('#content');
     self.target.navbar = $('#navbar');
+    self.target.profile = $('#profile');
 
     self.template = {};
     self.template.home = $('#template-home').html();
@@ -53,8 +60,11 @@ var PageController = function() {
     self.template.glasswares = $('#template-glasswares').html();
     self.template.errors = '<ul class="list-unstyled"><% _.each(errors, function(error, field) { %><li><%= field %>: <%= error %></li><% }); %></ul>';
 
+    self.template.logged_in = '<li class="profile"> <img class="img-rounded profile-img" alt="avatar" src="<%= profile.picture %>" /> <span class="nickname"><%= profile.nickname %></span> </li> <li><a class="link logout">Sign Out</a> </li>';
+    self.template.logged_out = '<li><a class="link login">Sign In</a></li>';
+
     var init = function() {
-        $(document).on('click', 'a', function(el) {
+        $(document).on('click', 'a:not(".link")', function(el) {
             el.preventDefault();
             window.location.hash = this.hash;
             self.page.set();
@@ -123,7 +133,29 @@ var PageController = function() {
             modal.find('.modal-body img').prop('src', image);
         })
 
+        $(document).on('click', '.link.login', function(e) {
+            e.preventDefault();
+            self.lock.show();
+        });
+
+        $(document).on('click', '.link.logout', function(e) {
+            e.preventDefault();
+            self.auth.logout();
+        })
+
+        self.lock.on("authenticated", function(authResult) {
+            self.lock.getProfile(authResult.idToken, function(error, profile) {
+                if (error) { return; }
+                localStorage.setItem('id_token', authResult.idToken);
+                if ('google-oauth2|101337159727148143539' == profile.user_id) {
+                    self.data.profile = profile;
+                    self.auth.show();
+                }
+            });
+        });
+
         self.page.set();
+        self.auth.show();
 
         $.getJSON('/v1/options', function(data) {
             self.data.options = data;
@@ -137,6 +169,37 @@ var PageController = function() {
         });
     }
 
+    self.auth = {};
+
+    self.auth.profile = function() {
+        if (!self.data.profile) {
+            token = localStorage.getItem('id_token');
+            self.lock.getProfile(token, function (err, profile) {
+                if (err) {
+                    self.data.profile = undefined;
+                } else {
+                    self.data.profile = profile;
+                    self.auth.show();
+                }
+            });
+        }
+    };
+
+    self.auth.show = function() {
+        if (self.data.profile) {
+            self.target.profile.html(_.template(self.template.logged_in)(self.data));
+        } else {
+            self.target.profile.html(_.template(self.template.logged_out)(self.data));
+        }
+        self.render.content();
+    };
+
+    self.auth.logout = function() {
+        self.data.profile = undefined;
+        localStorage.removeItem('id_token');
+        self.auth.show();
+    };
+
     self.upload = function(file, key) {
         var photoKey = self.data.aws.album + key;
         s3.upload({
@@ -144,9 +207,7 @@ var PageController = function() {
             Body: file,
             ACL: 'public-read'
         }, function(err, data) {
-            if (err) {
-                return err.message;
-            }
+            if (err) { return err.message; }
             return data.Location;
         });
         return 'https://bieraustin.s3-us-west-2.amazonaws.com/'+photoKey;
@@ -166,7 +227,7 @@ var PageController = function() {
         }
         parts = parts[0].split('/');
         self.data.template = parts[parts.length-1];
-        if (!self.data.template) { self.data.template = 'home'; }
+        if (!(self.data.template in self.template)) { self.data.template = 'home'; }
     }
 
     self.render = {}
@@ -185,7 +246,11 @@ var PageController = function() {
     }
 
     self.render.content = function() {
-        self.target.content.html(_.template(self.template[self.data.template])(self.data));
+        if (self.data.profile) {
+            self.target.content.html(_.template(self.template[self.data.template])(self.data));
+        } else {
+            self.target.content.html('');
+        }
     }
 
     self.load = {};
