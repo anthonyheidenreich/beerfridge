@@ -244,7 +244,7 @@ var PageController = function() {
     }
 
     self.render.content = function() {
-        if (true || self.data.profile) {
+        if (self.data.profile) {
             self.target.content.html(_.template(self.template[self.data.template])(self.data));
         } else {
             self.target.content.html('');
