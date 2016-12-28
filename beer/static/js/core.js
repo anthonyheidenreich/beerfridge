@@ -100,9 +100,9 @@ var PageController = function() {
         $(document).on('submit', 'form', function(el) {
             el.preventDefault();
             form = $(this);
-            var result_field = form.find('.result');
-            uploads = form.find('input[type=file]');
             var data = form.serializeObject();
+
+            uploads = form.find('input[type=file]');
             for (i=0; i < uploads.length; i++) {
                 field = uploads[i];
                 if (field.files.length) {
@@ -110,6 +110,8 @@ var PageController = function() {
                     data[$(field).prop('name')] = self.upload(field.files[0], key);
                 }
             }
+
+            var result_field = form.find('.result');
             result_field.removeClass('hide alert-success alert-danger').html('');
             $.ajax({
                 url: form.prop('action'),
@@ -246,7 +248,7 @@ var PageController = function() {
     }
 
     self.render.content = function() {
-        if (self.data.profile) {
+        if (true || self.data.profile) {
             self.target.content.html(_.template(self.template[self.data.template])(self.data));
         } else {
             self.target.content.html('');

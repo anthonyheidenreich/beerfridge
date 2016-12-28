@@ -149,7 +149,13 @@
         <tbody>
           <% _.each(beers.results, function(beer){ %>
             <tr>
-              <td><%= beer.name %></td>
+              <td>
+                <% if (beer.image) { %>
+                  <span class="link image" data-toggle="modal" data-target="#image-modal" data-image="<%= beer.image %>"><%= beer.name %></span>
+                <% } else { %>
+                  <%= beer.name %>
+                <% } %>
+              </td>
               <td><%= beer.style %></td>
               <td><%= beer.quantity %></td>
               <td><a href="#breweries/<%= beer.brewery %>/beers"><%= beer.brewery %></a></td>
@@ -235,6 +241,11 @@
               </div>
             </div>
 
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="glassware-image">Select an Image</label>
+              <div class="col-md-5"><input type="file" accept="image/*" name="image" /></div>
+            </div>
+
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="beer-quantity">Quantity</label>
@@ -263,7 +274,8 @@
         <thead>
           <tr>
             <th class="col-md-4">
-              <span class="link ordering" data-field="<%= params.ordering == '-name' || params.ordering == '' ? '-' : '+' %>name">Name
+
+              <span class="link ordering" data-field="<%= params.ordering == '+name' || params.ordering == '' ? '-' : '+' %>name">Name
                 <% if (params.ordering.contains('name') || params.ordering == '') { %>
                   <span class="glyphicon glyphicon-chevron-<%= params.ordering[0] == '-' ? 'up' : 'down' %>"></span>
                   <% } %>
@@ -289,7 +301,13 @@
         <tbody>
           <% _.each(breweries.results, function(brewery){ %>
             <tr>
-              <td><%= brewery.name %></td>
+              <td>
+                <% if (brewery.logo) { %>
+                  <span class="link image" data-toggle="modal" data-target="#image-modal" data-image="<%= brewery.logo %>"><img class="rounded col-md-2" src="<%= brewery.logo %>" /> <%= brewery.name %></span>
+                <% } else { %>
+                  <%= brewery.name %>
+                <% } %>
+              </td>
               <td><%= brewery.city %></td>
               <td><%= brewery.state %></td>
               <td>
@@ -339,6 +357,11 @@
                 <input id="brewery-name" name="name" type="text" placeholder="" class="form-control input-md" required="" />
 
               </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="brewery-logo">Select an Image</label>
+              <div class="col-md-5"><input type="file" accept="image/*" name="logo" /></div>
             </div>
 
             <!-- Text input-->
@@ -412,7 +435,7 @@
             <tr>
               <td>
                 <% if (glassware.image) { %>
-                  <span class="link image" data-toggle="modal" data-target="#image-modal" data-image="<%= glassware.image%>"><%= glassware.description %></span>
+                  <span class="link image" data-toggle="modal" data-target="#image-modal" data-image="<%= glassware.image %>"><%= glassware.description %></span>
                 <% } else { %>
                   <%= glassware.description %>
                 <% } %>
@@ -424,7 +447,7 @@
                 <span class="link glyphicon glyphicon-chevron-right toggle" title="More Actions">
                   <span class="link delete btn btn-xs btn-danger hide" data-uri="glasswares/<%= glassware.id %>"><span class="glyphicon glyphicon-remove danger"></span></span>
                 </span>
-            </td>
+              </td>
             </tr>
           <% }); %>
         </tbody>
@@ -467,15 +490,15 @@
               <div class="col-md-5">
                 <select id="glassware-brewery" name="brewery" class="form-control">
                   <option value="">None</option>
-                <% _.each(breweries.results, function(brewery){ %>
-                  <option value="<%= brewery.id %>"><%= brewery.name %></option>
-                <% }); %>
+                  <% _.each(breweries.results, function(brewery){ %>
+                    <option value="<%= brewery.id %>"><%= brewery.name %></option>
+                  <% }); %>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="glassware-image">Select File</label>
+              <label class="col-md-4 control-label" for="glassware-image">Select an Image</label>
               <div class="col-md-5"><input type="file" accept="image/*" name="image" /></div>
             </div>
 
@@ -604,16 +627,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="{% static 'js/underscore-min.js' %}"></script>
     <script src="{% static 'js/jquery.serialize-object.js' %}"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.6.10.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
     <!-- Auth0 lock script -->
     <script src="https://cdn.auth0.com/js/lock/10.3.0/lock.min.js"></script>
-
-    <script src="{% static 'js/auth0-variables.js' %}"></script>
 
     <script src="{% static 'js/core.js' %}"></script>
 
