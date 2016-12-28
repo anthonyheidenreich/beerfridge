@@ -27,10 +27,9 @@
     <style>
       .link {
         cursor:pointer;
-      }
-      th .link {
         color: #337ab7;
       }
+
       .link:hover {
         text-decoration:underline;
       }
@@ -394,7 +393,13 @@
         <tbody>
           <% _.each(glasswares.results, function(glassware){ %>
             <tr>
-              <td><%= glassware.description %></td>
+              <td>
+                <% if (glassware.image) { %>
+                  <span class="link image" data-toggle="modal" data-target="#image-modal" data-image="<%= glassware.image%>"><%= glassware.description %></span>
+                <% } else { %>
+                  <%= glassware.description %>
+                <% } %>
+              </td>
               <td><a href="#breweries/<%= glassware.brewery %>/glasswares"><%= glassware.brewery %></a></td>
               <td><%= glassware.style %></td>
               <td><%= glassware.quantity %></td>
@@ -432,7 +437,7 @@
           <div class="row">
             <!-- Text input-->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="glassware-description">Name</label>
+              <label class="col-md-4 control-label" for="glassware-description">Description</label>
               <div class="col-md-5">
                 <input id="glassware-description" name="description" type="text" placeholder="" class="form-control input-md" required="" />
 
@@ -444,12 +449,17 @@
               <label class="col-md-4 control-label" for="glassware-brewery">Brewery</label>
               <div class="col-md-5">
                 <select id="glassware-brewery" name="brewery" class="form-control">
-                  <option>None</option>
+                  <option value="">None</option>
                 <% _.each(breweries.results, function(brewery){ %>
                   <option value="<%= brewery.id %>"><%= brewery.name %></option>
                 <% }); %>
                 </select>
               </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="glassware-image">Select File</label>
+              <div class="col-md-5"><input type="file" accept="image/*" name="image" /></div>
             </div>
 
             <!-- Select Basic -->
@@ -558,11 +568,29 @@
       </div>
     </script>
 
+    <!-- Modal -->
+    <div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <img class="col-md-12" src="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="{% static 'js//underscore-min.js' %}"></script>
+    <script src="{% static 'js/underscore-min.js' %}"></script>
+    <script src="{% static 'js/jquery.serialize-object.js' %}"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.6.10.min.js"></script>
     <script src="{% static 'js/core.js' %}"></script>
 
     <!-- Latest compiled and minified JavaScript -->

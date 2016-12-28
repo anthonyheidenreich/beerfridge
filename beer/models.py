@@ -15,6 +15,7 @@ class Location(models.Model):
 class Brewery(models.Model):
     id = models.SlugField(primary_key=True)
     name = models.CharField(max_length=100, blank=False)
+    logo = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=100, blank=True)
     state = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -29,6 +30,7 @@ class Beer(models.Model):
     brewery = models.ForeignKey(Brewery, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     style = models.CharField(choices=BEER_STYLE_CHOICES, max_length=100)
+    image = models.CharField(max_length=255, blank=True)
     quantity = models.PositiveIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -40,6 +42,7 @@ class Beer(models.Model):
 class Glassware(models.Model):
     brewery = models.ForeignKey(Brewery, null=True, on_delete=models.CASCADE)
     style = models.CharField(choices=GLASSWARE_STYLES, default='python', max_length=100)
+    image = models.CharField(max_length=255, blank=True)
     description = models.CharField(max_length=201)
     quantity = models.PositiveIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)

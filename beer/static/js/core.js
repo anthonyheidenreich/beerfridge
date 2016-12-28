@@ -1,12 +1,31 @@
 String.prototype.contains = function contains(match) { return this.indexOf(match) !== -1; }
 
+AWS.config.region = 'us-west-2'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'us-west-2:43d6d9cb-2f64-4f07-bb19-d46554d40723',
+});
+
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+}
+
+
 var PageController = function() {
     var self = this;
 
     self.data = {};
-    self.data.api = { }
-    self.data.api.version = 'v1'
+    self.data.api = {};
+    self.data.api.version = 'v1';
     self.data.api.base = window.location.origin + '/' + self.data.api.version + '/';
+    self.data.aws = {};
+    self.data.aws.bucket = 'bieraustin';
+    self.data.aws.album = 'beerfridge/';
     self.data.beers = {results: []}
     self.data.breweries = {results: []}
     self.data.options = {}
@@ -15,6 +34,12 @@ var PageController = function() {
     self.data.params = {
         'ordering': '',
     };
+
+    self.s3 = new AWS.S3({
+                        apiVersion: '2006-03-01',
+                        params: {Bucket: self.data.aws.bucket}
+                    });
+
 
     self.target = {};
     self.target.content = $('#content');
@@ -66,12 +91,21 @@ var PageController = function() {
             el.preventDefault();
             form = $(this);
             var result_field = form.find('.result');
+            uploads = form.find('input[type=file]');
+            var data = form.serializeObject();
+            for (i=0; i < uploads.length; i++) {
+                field = uploads[i];
+                if (field.files.length) {
+                    key = 'id' in data ? data.id : ('name' in data ? data.name : guid());
+                    data[$(field).prop('name')] = self.upload(field.files[0], key);
+                }
+            }
             result_field.removeClass('hide alert-success alert-danger').html('');
             $.ajax({
                 url: form.prop('action'),
                 method: form.prop('method'),
                 dataType : 'json',
-                data: form.serialize(),
+                data: data,
                 success: function(result) {
                     result_field.addClass('alert-success').html('Success!');
                     form[0].reset();
@@ -81,6 +115,13 @@ var PageController = function() {
                 }
             });
         });
+
+        $('#image-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var image = button.data('image');
+            var modal = $(this);
+            modal.find('.modal-body img').prop('src', image);
+        })
 
         self.page.set();
 
@@ -94,6 +135,21 @@ var PageController = function() {
                 });
             });
         });
+    }
+
+    self.upload = function(file, key) {
+        var photoKey = self.data.aws.album + key;
+        s3.upload({
+            Key: photoKey,
+            Body: file,
+            ACL: 'public-read'
+        }, function(err, data) {
+            if (err) {
+                return err.message;
+            }
+            return data.Location;
+        });
+        return 'https://bieraustin.s3-us-west-2.amazonaws.com/'+photoKey;
     }
 
     self.page = {};
