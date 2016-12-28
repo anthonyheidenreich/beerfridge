@@ -553,7 +553,7 @@
 - model: beer.Brewery
   pk: dogfish-head
   fields:
-    name: Dogfish Headx
+    name: Dogfish Head
     city: Milton
     state: DE
     created_at: "2016-12-21T18:00:00+00:00"

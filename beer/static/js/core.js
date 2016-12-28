@@ -34,6 +34,10 @@ var PageController = function() {
     self.data.beers = {results: []}
     self.data.breweries = {results: []}
     self.data.options = {}
+    self.data.lookup = {}
+    self.data.lookup.breweries = {}
+    self.data.lookup.locations = {}
+    self.data.lookup.glassware = {}
     self.data.glasswares = {results: []}
     self.data.locations = {results: []}
     self.data.params = { 'ordering': '', };
@@ -121,6 +125,7 @@ var PageController = function() {
                 success: function(result) {
                     result_field.addClass('alert-success').html('Success!');
                     form[0].reset();
+                    self.load.options();
                 },
                 error: function(result) {
                     result_field.addClass('alert-danger').html(_.template(self.template.errors)({'errors': result.responseJSON}));
@@ -159,16 +164,7 @@ var PageController = function() {
         self.page.set();
         self.auth.show();
 
-        $.getJSON('/v1/options', function(data) {
-            self.data.options = data;
-            $.getJSON('/v1/breweries', function(data) {
-                self.data.breweries = data;
-                $.getJSON('/v1/locations', function(data) {
-                    self.data.locations = data;
-                    self.render.page();
-                });
-            });
-        });
+        self.load.options(self.render.page);
     }
 
     self.auth = {};
@@ -260,6 +256,24 @@ var PageController = function() {
         $.getJSON('/v1/'+path, function(data) {
             self.data[self.data.template] = data;
             self.render.content();
+        });
+    }
+
+    self.load.options = function(callback) {
+        $.getJSON('/v1/options', function(data) {
+            self.data.options = data;
+            _.each(self.data.options.locations, function(l) {
+                self.data.lookup.locations[l.id] = l.name;
+            });
+            _.each(self.data.options.breweries, function(b) {
+                self.data.lookup.breweries[b.id] = b.name;
+            });
+            _.each(self.data.options['glassware-styles'], function(b) {
+                self.data.lookup.glassware[b[0]] = b[1];
+            });
+            if (callback) {
+                callback();
+            }
         });
     }
     init();

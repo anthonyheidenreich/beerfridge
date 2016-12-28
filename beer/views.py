@@ -11,11 +11,14 @@ from rest_framework.response import Response
 @api_view()
 def options(request):
     breweries = Brewery.objects.all()
-    serializer = BrewerySerializer(breweries, context={'request': request}, many=True)
+    brewery_serializer = BrewerySerializer(breweries, context={'request': request}, many=True)
+    locations = Location.objects.all()
+    location_serializer = LocationSerializer(locations, context={'request': request}, many=True)
     return Response({
         'beer-styles': BEER_STYLES,
         'glassware-styles': GLASSWARE_STYLES,
-        'breweries': serializer.data,
+        'breweries': brewery_serializer.data,
+        'locations': location_serializer.data,
     })
 
 

@@ -158,8 +158,8 @@
               </td>
               <td><%= beer.style %></td>
               <td><%= beer.quantity %></td>
-              <td><a href="#breweries/<%= beer.brewery %>/beers"><%= beer.brewery %></a></td>
-              <td><a href="#locations/<%= beer.location %>/beers"><%= beer.location %></a></td>
+              <td><a href="#breweries/<%= beer.brewery %>/beers"><%= lookup.breweries[beer.brewery] || beer.brewery %></a></td>
+              <td><a href="#locations/<%= beer.location %>/beers"><%= lookup.locations[beer.location] || beer.location %></a></td>
               <td>
                   <span class="link glyphicon glyphicon-chevron-right toggle" title="More Actions">
                     <span class="link delete btn btn-xs btn-danger hide" title="Remove Beer" data-uri="beers/<%= beer.id %>"><span class="glyphicon glyphicon-remove danger"></span></span>
@@ -234,7 +234,7 @@
               <label class="col-md-4 control-label" for="beer-location">Location</label>
               <div class="col-md-5">
                 <select id="beer-location" name="location" class="form-control">
-                <% _.each(locations.results, function(location){ %>
+                <% _.each(options.locations, function(location){ %>
                   <option value="<%= location.id %>"><%= location.name %></option>
                 <% }); %>
                 </select>
@@ -440,7 +440,7 @@
                   <%= glassware.description %>
                 <% } %>
               </td>
-              <td><a href="#breweries/<%= glassware.brewery %>/glasswares"><%= glassware.brewery %></a></td>
+              <td><a href="#breweries/<%= glassware.brewery %>/beers"><%= lookup.breweries[glassware.brewery] || glassware.brewery %></a></td>
               <td><%= glassware.style %></td>
               <td><%= glassware.quantity %></td>
               <td>
