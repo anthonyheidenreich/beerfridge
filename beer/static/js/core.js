@@ -153,7 +153,7 @@ var PageController = function() {
         self.lock.on("authenticated", function(authResult) {
             self.lock.getProfile(authResult.idToken, function(error, profile) {
                 if (error) { return; }
-                localStorage.setItem('id_token', authResult.idToken);
+                sessionStorage.setItem('id_token', authResult.idToken);
                 if ('google-oauth2|101337159727148143539' == profile.user_id) {
                     self.data.profile = profile;
                     self.auth.show();
@@ -171,7 +171,7 @@ var PageController = function() {
 
     self.auth.profile = function() {
         if (!self.data.profile) {
-            token = localStorage.getItem('id_token');
+            token = sessionStorage.getItem('id_token');
             self.lock.getProfile(token, function (err, profile) {
                 if (err) {
                     self.data.profile = undefined;
@@ -194,7 +194,7 @@ var PageController = function() {
 
     self.auth.logout = function() {
         self.data.profile = undefined;
-        localStorage.removeItem('id_token');
+        sessionStorage.removeItem('id_token');
         self.auth.show();
     };
 
