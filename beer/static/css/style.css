@@ -1,0 +1,91 @@
+.link {
+    cursor:pointer;
+    color: #337ab7;
+}
+
+.link:hover {
+    text-decoration:underline;
+}
+
+.link.glyphicon:hover {
+    text-decoration:none;
+}
+
+.profile {
+    padding-top: 11px;
+    padding-bottom: 15px;
+}
+
+.profile img {
+    width: 30px;
+    height: 30px;
+}
+
+tbody .dropdown-menu { min-width: 100px }
+tbody .dropdown-item { padding-left: 5px; padding-top: 5px; }
+tbody .dropdown-item.link:hover { text-decoration: none; background-color: #eee; }
+
+
+.list-inline.list-boxes .list-group-item {
+    border: 0 !important;
+}
+
+.card__front, .card__back {
+    background: #FFF;
+    border-radius: 10px;
+    transition: -webkit-transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    min-height:8.5em;
+    max-height:8.5em;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card__front,
+.card__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.card__back {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card.effect__click.flipped .card__front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card.effect__click.flipped .card__back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+}
+
+.card__front:hover, .card__back:hover {
+    border-color: #666;
+}
+
+.card__front {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+.card__back {
+    -webkit-transform: rotateY(-180deg);
+    overflow: scroll;
+}
+
+.card__back dt {
+    width: 70px;
+}
+
+.card__back dd {
+    margin-left: 80px;
+}

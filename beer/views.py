@@ -27,6 +27,11 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def admin(request):
+    context = { }
+    return render(request, 'admin.html', context)
+
+
 class BeerList(generics.ListCreateAPIView):
     queryset = Beer.objects.all()
     serializer_class = BeerSerializer

@@ -1,25 +1,3 @@
-String.prototype.contains = function contains(match) { return this.indexOf(match) !== -1; }
-
-AWS.config.region = 'us-west-2'; // Region
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-west-2:43d6d9cb-2f64-4f07-bb19-d46554d40723',
-});
-
-var AUTH0_CLIENT_ID='1hqQ9GUYAdeni5J7g5FZFZgY0BBx9alp';
-var AUTH0_DOMAIN='bieraustin.auth0.com';
-var AUTH0_CALLBACK_URL=location.href;
-
-function guid() {
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-    }
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
-}
-
-
 var PageController = function() {
     var self = this;
 
@@ -140,6 +118,13 @@ var PageController = function() {
             modal.find('.modal-body img').prop('src', image);
         })
 
+        $('#image-upload-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var action = button.data('uri');
+            var modal = $(this);
+            modal.find('.modal-body form').prop('action', action);
+        })
+
         $(document).on('click', '.link.login', function(e) {
             e.preventDefault();
             self.lock.show();
@@ -153,8 +138,8 @@ var PageController = function() {
         self.lock.on("authenticated", function(authResult) {
             self.lock.getProfile(authResult.idToken, function(error, profile) {
                 if (error) { return; }
-                sessionStorage.setItem('id_token', authResult.idToken);
-                if ('google-oauth2|101337159727148143539' == profile.user_id) {
+                if ('bieraustin@gmail.com' == profile.email) {
+                    localStorage.setItem('id_token', authResult.idToken);
                     self.data.profile = profile;
                     self.auth.show();
                 }
@@ -162,7 +147,7 @@ var PageController = function() {
         });
 
         self.page.set();
-        self.auth.show();
+        self.auth.profile();
 
         self.load.options(self.render.page);
     }
@@ -170,16 +155,19 @@ var PageController = function() {
     self.auth = {};
 
     self.auth.profile = function() {
-        if (!self.data.profile) {
-            token = sessionStorage.getItem('id_token');
+        token = localStorage.getItem('id_token');
+        if (!self.data.profile && token) {
             self.lock.getProfile(token, function (err, profile) {
                 if (err) {
                     self.data.profile = undefined;
+                    localStorage.removeItem('id_token');
                 } else {
                     self.data.profile = profile;
-                    self.auth.show();
                 }
+                self.auth.show();
             });
+        } else {
+            self.auth.show();
         }
     };
 
@@ -194,7 +182,7 @@ var PageController = function() {
 
     self.auth.logout = function() {
         self.data.profile = undefined;
-        sessionStorage.removeItem('id_token');
+        localStorage.removeItem('id_token');
         self.auth.show();
     };
 

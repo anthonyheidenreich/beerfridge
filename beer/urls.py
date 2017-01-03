@@ -4,6 +4,7 @@ from beer import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^admin$', views.admin, name='admin'),
     url(r'^v1/beers/?$', views.BeerList.as_view(), name='beer-list'),
     url(r'^v1/beers/(?P<pk>[0-9]+)/?$', views.BeerDetail.as_view(), name='beer-detail'),
     url(r'^v1/breweries/?$', views.BreweryList.as_view(), name='brewery-list'),
