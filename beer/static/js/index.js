@@ -238,11 +238,7 @@ var PageController = function() {
     }
 
     self.render.content = function() {
-        if (self.data.profile) {
-            self.target.content.html(_.template(self.template[self.data.template])(self.data));
-        } else {
-            self.target.content.html('');
-        }
+        self.target.content.html(_.template(self.template[self.data.template])(self.data));
     }
 
     self.load = {};

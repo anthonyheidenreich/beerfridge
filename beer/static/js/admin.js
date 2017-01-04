@@ -97,7 +97,7 @@ var PageController = function() {
             result_field.removeClass('hide alert-success alert-danger').html('');
             $.ajax({
                 url: form.prop('action'),
-                method: form.prop('method'),
+                method: form.data('method') || form.prop('method'),
                 dataType : 'json',
                 data: data,
                 success: function(result) {
@@ -120,9 +120,9 @@ var PageController = function() {
 
         $('#image-upload-modal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
-            var action = button.data('uri');
             var modal = $(this);
-            modal.find('.modal-body form').prop('action', action);
+            modal.find('.modal-body form').prop('action', button.data('uri'));
+            modal.find('.modal-body form input[type=file]').prop('name', button.data('field'));
         })
 
         $(document).on('click', '.link.login', function(e) {

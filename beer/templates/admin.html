@@ -84,27 +84,13 @@
     </div> <!-- /container -->
 
     <script type="text/html" id="template-home">
-      <div class="row">
-        <div class="col-lg-6">
-          <h2>Beers</h2>
-          <p>See the list of beers currently available.</p>
-          <p class="nav"><a class="btn btn-default" href="#beers" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-6 -->
-        <div class="col-lg-6">
-          <h2>Glassware</h2>
-          <p>See the list of glassware currently available.</p>
-          <p class="nav"><a class="btn btn-default" href="#glasswares" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-6 -->
-        <div class="col-lg-6">
-          <h2>Breweries</h2>
-          <p>See the list of breweries currently in the system.</p>
-          <p class="nav"><a class="btn btn-default" href="#breweries" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-6 -->
-        <div class="col-lg-6">
-          <h2>Locations</h2>
-          <p>See the list of locations where beers and glassware are stored.</p>
-          <p class="nav"><a class="btn btn-default" href="#locations" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-6 -->
+      <div id="home" class="row">
+        <ul class="list-inline">
+          <li class="list-group-item col-sm-3"><a href="#beers"><img class="col-sm-12" src="{% static 'images/icons/beer.png' %}" title="Beers" /></a></li>
+          <li class="list-group-item col-sm-3"><a href="#breweries"><img class="col-sm-12" src="{% static 'images/icons/brewery.png' %}" title="Breweries" /></a></li>
+          <li class="list-group-item col-sm-3"><a href="#glasswares"><img class="col-sm-12" src="{% static 'images/icons/glassware.png' %}" title="Glasswares" /></a></li>
+          <li class="list-group-item col-sm-3"><a href="#locations"><img class="col-sm-12" src="{% static 'images/icons/location.png' %}" title="Locations" /></a></li>
+        </ul>
       </div><!-- /.row -->
     </script>
 
@@ -170,7 +156,7 @@
                     <span class="link glyphicon glyphicon-chevron-down" title="More Actions"></span>
                   </button>
                   <div class="dropdown-menu">
-                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-uri="beers/<%= beer.id %>">
+                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-field="image" data-uri="<%= api.version %>/beers/<%= beer.id %>">
                       <span class="btn btn-xs btn-primary glyphicon glyphicon-upload"></span> Upload
                     </div>
                     <div class="dropdown-item link delete" title="Remove Beer" data-uri="beers/<%= beer.id %>">
@@ -311,6 +297,7 @@
               </span>
             </th>
             <th class="col-md-2">links</th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>
@@ -328,6 +315,22 @@
               <td>
                 <a href="#breweries/<%= brewery.id %>/beers">beers</a>
                 | <a href="#breweries/<%= brewery.id %>/glassware">glasses</a>
+              </td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-secondary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="link glyphicon glyphicon-chevron-down" title="More Actions"></span>
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-field="logo" data-uri="<%= api.version %>/breweries/<%= brewery.id %>">
+                      <span class="btn btn-xs btn-primary glyphicon glyphicon-upload"></span> Upload
+                    </div>
+                    <div class="dropdown-item link delete" title="Remove Brewery" data-uri="breweries/<%= brewery.id %>">
+                      <span class="btn btn-xs btn-danger glyphicon glyphicon-remove"></span> Delete
+                    </div>
+                    </div>
+                  </div>
+                </div>
               </td>
             </tr>
           <% }); %>
@@ -459,9 +462,20 @@
               <td><%= glassware.style %></td>
               <td><%= glassware.quantity %></td>
               <td>
-                <span class="link glyphicon glyphicon-chevron-right toggle" title="More Actions">
-                  <span class="link delete btn btn-xs btn-danger hide" data-uri="glasswares/<%= glassware.id %>"><span class="glyphicon glyphicon-remove danger"></span></span>
-                </span>
+                <div class="dropdown">
+                  <button class="btn btn-secondary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="link glyphicon glyphicon-chevron-down" title="More Actions"></span>
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-field="image" data-uri="<%= api.version %>/glasswares/<%= glassware.id %>">
+                      <span class="btn btn-xs btn-primary glyphicon glyphicon-upload"></span> Upload
+                    </div>
+                    <div class="dropdown-item link delete" title="Remove glassware" data-uri="glasswares/<%= glassware.id %>">
+                      <span class="btn btn-xs btn-danger glyphicon glyphicon-remove"></span> Delete
+                    </div>
+                    </div>
+                  </div>
+                </div>
               </td>
             </tr>
           <% }); %>
@@ -648,31 +662,36 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <form method="PATCH" action="" class="form-horizontal">
-                <fieldset>
-
-                  <!-- Form Name -->
-                  <legend>Add a Beer</legend>
-                  <div class="form-group">
-                    <label class="col-md-4 control-label" for="glassware-image">Select an Image</label>
-                    <div class="col-md-5"><input type="file" accept="image/*" name="image" /></div>
-                  </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label"></label>
-                    <div class="col-md-4">
-                      <button name="add" class="btn btn-success">Add</button>
-                      <input type="reset" class="btn btn-primary" />
+              <div class="col-md-12">
+                <form data-method="PATCH" action="" class="form-horizontal">
+                  <fieldset>
+                    <!-- Form Name -->
+                    <legend>Add an Image</legend>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="image">Select an Image</label>
+                      <div class="col-md-5"><input type="file" accept="image/*" name="" /></div>
                     </div>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label"></label>
+                      <div class="col-md-4">
+                        <button name="add" class="btn btn-success">Add</button>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-6 alert hide result"> </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div><!-- .col-md-12 -->
+            </div><!-- .row -->
+          </div><!-- .modal-body -->
+        </div><!-- .modal-content -->
+      </div><!-- .modal-dialog -->
+    </div><!-- .modal.fade -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
