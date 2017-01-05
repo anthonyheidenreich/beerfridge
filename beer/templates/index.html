@@ -78,30 +78,47 @@
           <% _.each(beers.results, function(beer){ %>
             <div class="col-sm-3 card effect__click clearfix">
               <div class="card__front">
-                <div class="col-sm-2">
+                <div class="col-sm-2 pull-left">
                   <% if (beer.image) { %>
                     <img class="img-responsive img-rounded link image" data-toggle="modal" data-target="#image-modal" data-image="<%= beer.image %>" src="<%= beer.image %>" title="<%= beer.name %>" alt="<%= beer.name %>" />
                   <% } else { %>
                     <img class="img-responsive img-rounded" src="{% static 'images/icons/beer.png' %}" title="<%= beer.name %>" alt="<%= beer.name %>" />
                   <% } %>
                 </div>
+                <div class="col-sm-1 pull-right"><span class="glyphicon glyphicon-transfer flip link"></span></div>
                 <div class="col-sm-9" title="<%= beer.id %>"><%= beer.name %></div>
-                <div class="col-sm-1"><span class="glyphicon glyphicon-transfer flip link"></span></div>
               </div>
               <div class="card__back">
-                <div class="col-sm-11">
-                  <dl class="dl-horizontal">
-                    <dt>Brewery</dt>
-                    <dd><a href="#breweries/<%= beer.brewery %>/beers"><%= lookup.breweries[beer.brewery] || beer.brewery %></a></dd>
-                    <dt>Style</dt>
-                    <dd><%= beer.style %></dd>
-                    <dt>Quantity</dt>
-                    <dd><%= beer.quantity %></dd>
-                    <dt>Location</dt>
-                    <dd><a href="#locations/<%= beer.location %>/beers"><%= lookup.locations[beer.location] || beer.location %></a></dd>
-                  </dl>
+                <div class="col-sm-2 pull-left">
+                  <% if (beer.image) { %>
+                    <img class="img-responsive img-rounded link image" data-toggle="modal" data-target="#image-modal" data-image="<%= beer.image %>" src="<%= beer.image %>" title="<%= beer.name %>" alt="<%= beer.name %>" />
+                  <% } else { %>
+                    <img class="img-responsive img-rounded" src="{% static 'images/icons/beer.png' %}" title="<%= beer.name %>" alt="<%= beer.name %>" />
+                  <% } %>
                 </div>
-                <div class="col-sm-1"><span class="glyphicon glyphicon-transfer flip link"></span></div>
+                <div class="col-sm-1 pull-right"><span class="glyphicon glyphicon-transfer flip link"></span></div>
+                <div class="col-sm-9 pull-left">
+                  <table class="table table-condensed table-responsive">
+                    <tbody>
+                      <tr>
+                        <th>Brewery</th>
+                        <td><a href="#breweries/<%= beer.brewery %>/beers"><%= lookup.breweries[beer.brewery] || beer.brewery %></a></td>
+                      </tr>
+                      <tr>
+                        <th>Style</th>
+                        <td><%= beer.style %></td>
+                      </tr>
+                      <tr>
+                        <th>Quantity</th>
+                        <td><%= beer.quantity %></td>
+                      </tr>
+                      <tr>
+                        <th>Location</th>
+                        <td><a href="#locations/<%= beer.location %>/beers"><%= lookup.locations[beer.location] || beer.location %></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><!-- .col-sm-9.pull-left -->
               </div>
             </div>
           <% }); %>
@@ -125,37 +142,47 @@
           <% _.each(breweries.results, function(brewery){ %>
             <div class="col-sm-3 card effect__click clearfix">
               <div class="card__front">
-                <div class="col-sm-2">
+                <div class="col-sm-2 pull-left">
                   <% if (brewery.logo) { %>
                     <img class="img-responsive img-rounded link image" data-toggle="modal" data-target="#image-modal" data-image="<%= brewery.logo %>" src="<%= brewery.logo %>" title="<%= brewery.name %>" alt="<%= brewery.name %>" />
                   <% } else { %>
                     <img class="img-responsive img-rounded" src="{% static 'images/icons/brewery.png' %}" title="<%= brewery.name %>" alt="<%= brewery.name %>" />
                   <% } %>
                 </div>
-                <div class="col-sm-9" title="<%= brewery.id %>"><%= brewery.name %></div>
-                <div class="col-sm-1"><span class="glyphicon glyphicon-transfer flip link"></span></div>
+                <div class="col-sm-1 pull-right"><span class="glyphicon glyphicon-transfer flip link"></span></div>
+                <div class="col-sm-9 pull-left" title="<%= brewery.id %>"><%= brewery.name %></div>
               </div>
               <div class="card__back">
-                <div class="col-sm-2">
+                <div class="col-sm-2 pull-left">
                   <% if (brewery.logo) { %>
                     <img class="img-responsive img-rounded link image" data-toggle="modal" data-target="#image-modal" data-image="<%= brewery.logo %>" src="<%= brewery.logo %>" title="<%= brewery.name %>" alt="<%= brewery.name %>" />
                   <% } else { %>
                     <img class="img-responsive img-rounded" src="{% static 'images/icons/brewery.png' %}" title="<%= brewery.name %>" alt="<%= brewery.name %>" />
                   <% } %>
                 </div>
-                <div class="col-sm-9">
-                  <dl class="dl-horizontal">
-                    <dt>Location</dt>
-                    <dd><%= brewery.city %>, <%= brewery.location %></dd>
-                    <dt>Quantity</dt>
-                    <dd><%= brewery.quantity %></dd>
-                    <dt>Beers</dt>
-                    <dd><a href="#breweries/<%= brewery.id %>/beers">beers</a></dd>
-                    <dt>Glassware</dt>
-                    <dd><a href="#breweries/<%= brewery.id %>/glassware">glasses</a></dd>
-                  </dl>
+                <div class="col-sm-1 pull-right"><span class="glyphicon glyphicon-transfer flip link"></span></div>
+                <div class="col-sm-9 pull-left">
+                  <table class="table table-condensed table-responsive">
+                    <tbody>
+                      <tr>
+                        <th>Location</th>
+                        <td><%= brewery.city %>, <%= brewery.location %></td>
+                      </tr>
+                      <tr>
+                        <th>Quantity</th>
+                        <td><%= brewery.quantity %></td>
+                      </tr>
+                      <tr>
+                        <th>Beers</th>
+                        <td><a href="#breweries/<%= brewery.id %>/beers">beers</a></td>
+                      </tr>
+                      <tr>
+                        <th>Glassware</th>
+                        <td><a href="#breweries/<%= brewery.id %>/glassware">glasses</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="col-sm-1"><span class="glyphicon glyphicon-transfer flip link"></span></div>
               </div>
             </div>
           <% }); %>
@@ -179,29 +206,46 @@
           <% _.each(glasswares.results, function(glassware){ %>
             <div class="col-sm-3 card effect__click clearfix">
               <div class="card__front">
-                <div class="col-sm-2">
+                <div class="col-sm-2 pull-left">
                   <% if (glassware.image) { %>
                     <img class="img-responsive link image" data-toggle="modal" data-target="#image-modal" data-image="<%= glassware.image %>" src="<%= glassware.image %>" title="<%= glassware.description %>" alt="<%= glassware.description %>" />
                   <% } else { %>
                     <img class="img-responsive" src="{% static 'images/icons/glassware.png' %}" title="<%= glassware.description %>" alt="<%= glassware.description %>" />
                   <% } %>
                 </div>
+                <div class="col-sm-1 pull-right flip link"><span class="glyphicon glyphicon-transfer"></span></div>
                 <div class="col-sm-9" title="<%= glassware.id %>"><%= glassware.description %></div>
-                <div class="col-sm-1"><span class="glyphicon glyphicon-transfer flip link"></span></div>
               </div>
               <div class="card__back">
-                <span class="pull-right glyphicon glyphicon-transfer flip link"></span>
-                <dl class="dl-horizontal">
-                  <% if (glassware.brewery) { %>
-                    <dt>Brewery</dt>
-                    <dd><a href="#breweries/<%= glassware.brewery %>/beers"><%= lookup.breweries[glassware.brewery] || glassware.brewery %></a></dd>
+                <div class="col-sm-2 pull-left">
+                  <% if (glassware.image) { %>
+                    <img class="img-responsive link image" data-toggle="modal" data-target="#image-modal" data-image="<%= glassware.image %>" src="<%= glassware.image %>" title="<%= glassware.description %>" alt="<%= glassware.description %>" />
+                  <% } else { %>
+                    <img class="img-responsive" src="{% static 'images/icons/glassware.png' %}" title="<%= glassware.description %>" alt="<%= glassware.description %>" />
                   <% } %>
-                  <dt>Style</dt>
-                  <dd><%= glassware.style %></dd>
-                  <dt>Quantity</dt>
-                  <dd><%= glassware.quantity %></dd>
-                </dl>
-              </div>
+                </div>
+                <div class="col-sm-1 pull-right flip link"><span class="glyphicon glyphicon-transfer"></span></div>
+                <div class="col-sm-9 pull-left">
+                  <table class="table table-condensed">
+                    <tbody>
+                    <% if (glassware.brewery) { %>
+                      <tr>
+                        <th>Brewery</th>
+                        <td><a href="#breweries/<%= glassware.brewery %>/beers"><%= lookup.breweries[glassware.brewery] || glassware.brewery %></a></td>
+                      </tr>
+                    <% } %>
+                      <tr>
+                        <th>Style</th>
+                        <td><%= glassware.style %></td>
+                      </tr>
+                      <tr>
+                        <th>Quantity</th>
+                        <td><%= glassware.quantity %></td>
+                      </tr>
+                    <tbody>
+                  </table>
+                </div><!-- .col.sm-9.pull-left -->
+              </div><!-- .card__back -->
             </div>
           <% }); %>
         </div>
@@ -262,12 +306,14 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <img class="img-responsive" src="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <div class="container-fluid">
+                <div class="col-sm-12"><img class="img-responsive" src="" /></div>
+              </div><!-- .container -->
+            </div><!-- .row -->
+          </div><!-- .modal-body -->
+        </div><!-- .modal-content -->
+      </div><!-- .modal-dialog -->
+    </div><!-- .modal.fade -->
 
     <!-- Modal -->
     <div class="modal fade" id="image-upload-modal" tabindex="-1" role="dialog">
