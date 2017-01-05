@@ -30,7 +30,7 @@
 
   <body>
 
-    <div class="container">
+    <div class="container-fluid">
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
@@ -57,9 +57,9 @@
         </div><!--/.container-fluid -->
       </nav>
 
-      <div class="container marketing" id="content"> </div>
+      <div class="container-fluid marketing" id="content"> </div>
 
-    </div> <!-- /container -->
+    </div> <!-- /container-fluid -->
 
     <script type="text/html" id="template-home">
       <div id="home" class="row">
@@ -74,7 +74,7 @@
 
     <script type="text/html" id="template-beers">
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <% _.each(beers.results, function(beer){ %>
             <div class="col-sm-3 card effect__click clearfix">
               <div class="card__front">
@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <% if (beers.previous) { %>
             <a class="pull-left btn btn-default" href="#<%= beers.previous.replace(api.base, '') %>"><span class="glyphicon glyphicon-chevron-left"></span> Previous</a>
           <% } %>
@@ -117,7 +117,7 @@
 
     <script type="text/html" id="template-breweries">
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <% _.each(breweries.results, function(brewery){ %>
             <div class="col-sm-3 card effect__click clearfix">
               <div class="card__front">
@@ -147,7 +147,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <% if (breweries.previous) { %>
             <a class="pull-left btn btn-default" href="#<%= breweries.previous.replace(api.base, '') %>"><span class="glyphicon glyphicon-chevron-left"></span> Previous</a>
           <% } %>
@@ -160,7 +160,7 @@
 
     <script type="text/html" id="template-glasswares">
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <% _.each(glasswares.results, function(glassware){ %>
             <div class="col-sm-3 card effect__click clearfix">
               <div class="card__front">
@@ -190,7 +190,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <% if (glasswares.previous) { %>
             <a class="pull-left btn btn-default" href="#<%= glasswares.previous.replace(api.base, '') %>"><span class="glyphicon glyphicon-chevron-left"></span> Previous</a>
           <% } %>
