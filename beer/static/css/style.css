@@ -55,31 +55,24 @@ tbody .dropdown-item.link:hover { text-decoration: none; background-color: #eee;
 .card__back {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
+    overflow: scroll;
+    display: none!important;
 }
 
 .card.effect__click.flipped .card__front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
+    display: none!important;
 }
 
 .card.effect__click.flipped .card__back {
     -webkit-transform: rotateY(0);
     transform: rotateY(0);
+    display: block!important;
 }
 
 .card__front:hover, .card__back:hover {
     border-color: #666;
-}
-
-.card__front {
-    overflow: hidden;
-    position: absolute;
-    z-index: 1;
-}
-
-.card__back {
-    -webkit-transform: rotateY(-180deg);
-    overflow: scroll;
 }
 
 .card__back dt {
