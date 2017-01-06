@@ -156,7 +156,7 @@
                     <span class="link glyphicon glyphicon-chevron-down" title="More Actions"></span>
                   </button>
                   <div class="dropdown-menu">
-                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-field="image" data-uri="<%= api.version %>/beers/<%= beer.id %>">
+                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-title="<%= beer.name %>" data-field="image" data-uri="<%= api.version %>/beers/<%= beer.id %>">
                       <span class="btn btn-xs btn-primary glyphicon glyphicon-upload"></span> Upload
                     </div>
                     <div class="dropdown-item link delete" title="Remove Beer" data-uri="beers/<%= beer.id %>">
@@ -322,7 +322,7 @@
                     <span class="link glyphicon glyphicon-chevron-down" title="More Actions"></span>
                   </button>
                   <div class="dropdown-menu">
-                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-field="logo" data-uri="<%= api.version %>/breweries/<%= brewery.id %>">
+                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-title="<%= brewery.name %>" data-field="logo" data-uri="<%= api.version %>/breweries/<%= brewery.id %>">
                       <span class="btn btn-xs btn-primary glyphicon glyphicon-upload"></span> Upload
                     </div>
                     <div class="dropdown-item link delete" title="Remove Brewery" data-uri="breweries/<%= brewery.id %>">
@@ -467,7 +467,7 @@
                     <span class="link glyphicon glyphicon-chevron-down" title="More Actions"></span>
                   </button>
                   <div class="dropdown-menu">
-                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-field="image" data-uri="<%= api.version %>/glasswares/<%= glassware.id %>">
+                    <div class="dropdown-item link upload" title="Add Image" data-toggle="modal" data-target="#image-upload-modal" data-title="<%= glassware.description %>" data-field="image" data-uri="<%= api.version %>/glasswares/<%= glassware.id %>">
                       <span class="btn btn-xs btn-primary glyphicon glyphicon-upload"></span> Upload
                     </div>
                     <div class="dropdown-item link delete" title="Remove glassware" data-uri="glasswares/<%= glassware.id %>">
@@ -665,8 +665,8 @@
               <div class="col-md-12">
                 <form data-method="PATCH" action="" class="form-horizontal">
                   <fieldset>
-                    <!-- Form Name -->
                     <legend>Add an Image</legend>
+                    <!-- Form Name -->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="image">Select an Image</label>
                       <div class="col-md-5"><input type="file" accept="image/*" name="" /></div>

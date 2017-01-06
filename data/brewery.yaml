@@ -1,598 +1,352 @@
-- model: beer.Brewery
-  pk: 512-brewing
-  fields:
-    name: (512) Brewing Co.
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
+- model: beer.brewery
   pk: 4th-tap
-  fields:
-    name: 4th Tap Brewing Co-Op
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: adelberts
-  fields:
-    name: "Adelbert's Brewery"
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
+  fields: {name: 4th Tap Brewing Co-Op, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/288d94d9-5538-ef5e-44f7-b45f8ed6e6af',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:22:44.181795+00:00'}
+- model: beer.brewery
+  pk: 512-brewing
+  fields: {name: (512) Brewing Co., logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/4283b980-b67c-6308-16d8-abbfd62ecd94',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:22:53.680085+00:00'}
+- model: beer.brewery
   pk: abgb
-  fields:
-    name: Austin Beer Garden and Brewery
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: austin-beerworks
-  fields:
-    name: Austin Beerworks
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: betas-brewhouse
-  fields:
-    name: "Beta's Brewhouse"
-    city: Elgin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: black-star-co-op
-  fields:
-    name: Black Star Co-op
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: blue-owl
-  fields:
-    name: Blue Owl Brewing Company
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: bluebonnet
-  fields:
-    name: Bluebonnet Beer Company
-    city: Round Rock
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: brewers-table
-  fields:
-    name: "Brewer's Table"
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: bull-creek
-  fields:
-    name: Bull Creek Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: circle-brewing
-  fields:
-    name: Circle Brewing Co.
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: draughthouse
-  fields:
-    name: Draughthouse
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: flix-brewhouse
-  fields:
-    name: Flix Brewhouse
-    city: Round Rock
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: flying-man-brewing
-  fields:
-    name: Flying Man Brewing
-    city: Pflugerville
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: friends-allies-brewing
-  fields:
-    name: Friends & Allies Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: granger-city-brewing
-  fields:
-    name: Granger City Brewing Company
-    city: Granger
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: hi-sign-brewing
-  fields:
-    name: Hi Sign Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: hops-and-grain
-  fields:
-    name: Hops and Grain
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: idle-vine-brewing-company
-  fields:
-    name: Idle Vine Brewing Company
-    city: Round Rock
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: independence-brewing
-  fields:
-    name: Independence Brewing Co.
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: infamous-brewing
-  fields:
-    name: Infamous Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: jester-king-brewery
-  fields:
-    name: Jester King Brewery
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: karmala-brewing
-  fields:
-    name: Karmala Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: last-stand-brewing
-  fields:
-    name: Last Stand Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: lazarus-brewing
-  fields:
-    name: Lazarus Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: live-oak-brewing
-  fields:
-    name: Live Oak Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: nxnw
-  fields:
-    name: NXNW
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: oasis-brewing
-  fields:
-    name: Oasis Texas Brewing Company
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: orf-brewing
-  fields:
-    name: Orf Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: oskar-blues
-  fields:
-    name: Oskar Blues
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: pinthouse-pizza
-  fields:
-    name: Pinthouse Pizza
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: red-horn-brewery
-  fields:
-    name: Red Horn Coffee House and Brewery
-    city: Cedar Park
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: rentsch-brewery
-  fields:
-    name: Rentsch Brewery
-    city: Georgetown
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: san-gabriel-river-brewing
-  fields:
-    name: San Gabriel River Brewing Co
-    city: Liberty Hill
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: save-the-world-brewing
-  fields:
-    name: Save The World Brewing
-    city: Marble Falls
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: solid-rock-brewing
-  fields:
-    name: Solid Rock Brewing
-    city: Spicewood
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: south-austin-brewery
-  fields:
-    name: South Austin Brewery
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: southern-heights-brewing
-  fields:
-    name: Southern Heights Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: st-elmo-brewing
-  fields:
-    name: St Elmo Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: strange-land-brewery
-  fields:
-    name: Strange Land Brewery
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: suds-monkey-brewing
-  fields:
-    name: Suds Monkey Brewing
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: texas-beer-company
-  fields:
-    name: Texas Beer Company
-    city: Taylor
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: thirsty-planet
-  fields:
-    name: Thirsty Planet
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: thousand-oaks-brewing
-  fields:
-    name: Thousand Oaks Brewing
-    city: Cedar Park
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: treaty-oaks-brewing
-  fields:
-    name: Treaty Oaks Brewing
-    city: Dripping Springs
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: twisted-x-brewing
-  fields:
-    name: Twisted X Brewing
-    city: Dripping Springs
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: two-wheel-brewing
-  fields:
-    name: Two Wheel Brewing
-    city: Buda
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: uncle-billys
-  fields:
-    name: "Uncle Billy's"
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: whitestone-brewery
-  fields:
-    name: Whitestone Brewery
-    city: Cedar Park
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: zilker-brewing-company
-  fields:
-    name: Zilker Brewing Company
-    city: Austin
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: stone-brewing
-  fields:
-    name: Stone Brewing
-    city: Escondido
-    state: CA
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: avery-brewing
-  fields:
-    name: Avery Brewing
-    city: Boulder
-    state: CO
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: great-divide-brewing
-  fields:
-    name: Great Divide Brewing Co.
-    city: Denver
-    state: CO
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: deschutes
-  fields:
-    name: Deschutes
-    city: Bend
-    state: OR
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: sierra-nevada
-  fields:
-    name: Sierra Nevada
-    city: Chico
-    state: CA
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: samuel-adams
-  fields:
-    name: Samuel Adams
-    city: boston
-    state: MA
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: new-belgium
-  fields:
-    name: New Belgium
-    city: Fort Collins
-    state: CO
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: epic-brewing
-  fields:
-    name: Epic Brewing
-    city: Salt Lake City
-    state: UT
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: founders
-  fields:
-    name: Founders
-    city: Grand Rapids
-    state: MI
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: ballast-point
-  fields:
-    name: Ballast Point
-    city: San Diego
-    state: CA
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: texian-brewing
-  fields:
-    name: Texian Brewing Company
-    city: Richmond
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: jolly-pumpkin
-  fields:
-    name: Jolly Pumpkin
-    city: Dexter
-    state: MI
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: lakewood-brewing
-  fields:
-    name: Lakewood Brewing Co.
-    city: Dallas
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
+  fields: {name: Austin Beer Garden and Brewery, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/cb93077a-cf2b-2f30-fded-5343590c7ff5',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:23:35.002649+00:00'}
+- model: beer.brewery
+  pk: adelberts
+  fields: {name: Adelbert's Brewery, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/47f2a8c8-b7c9-7d1c-a4c7-5ef5afc8d46d',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:23:07.317177+00:00'}
+- model: beer.brewery
   pk: anderson-valley
-  fields:
-    name: Anderson Valley
-    city: Boonville
-    state: CA
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: boulevard
-  fields:
-    name: Boulevard Brewing
-    city: Kansas City
-    state: MO
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: freetail
-  fields:
-    name: Freetail Brewing Co
-    city: San Antonio
-    state: TX
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: prairie-artisan-ales
-  fields:
-    name: Prairie Artisan Ales
-    city: Krebs
-    state: OK
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
+  fields: {name: Anderson Valley, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/3d6e8012-1c41-88ad-c867-059c6aa796fe',
+    city: Boonville, state: CA, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:23:17.322172+00:00'}
+- model: beer.brewery
+  pk: austin-beerworks
+  fields: {name: Austin Beerworks, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/c79dccc5-0e39-25da-dbe0-57c3258d63c8',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:23:45.865384+00:00'}
+- model: beer.brewery
+  pk: avery-brewing
+  fields: {name: Avery Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/59312323-81fb-8ca8-3305-994a1f02e29f',
+    city: Boulder, state: CO, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:24:01.550783+00:00'}
+- model: beer.brewery
+  pk: ballast-point
+  fields: {name: Ballast Point, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/97459f3b-10f2-b6c2-14b6-ad946f50b23d',
+    city: San Diego, state: CA, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:24:15.767441+00:00'}
+- model: beer.brewery
+  pk: betas-brewhouse
+  fields: {name: Beta's Brewhouse, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/bb4bdf79-4def-65cf-58b9-7b76a530b0a6',
+    city: Elgin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2017-01-05
+      05:26:49.540049+00:00'}
+- model: beer.brewery
   pk: big-sky-brewing
-  fields:
-    name: Big Sky Brewing
-    city: Missoula
-    state: MT
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: dogfish-head
-  fields:
-    name: Dogfish Head
-    city: Milton
-    state: DE
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: victory
-  fields:
-    name: Victory Brewing Co
-    city: Downington
-    state: PA
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: vander-ghinste
-  fields:
-    name: Omer Vander Ghinste Brewery
-    state: Belgiumx
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: ommegang
-  fields:
-    name: Ommegang
-    city: Cooperstown
-    state: NY
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
-  pk: great-divide
-  fields:
-    name: Great Divide Brewing Company
-    city: Denver
-    state: CO
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
-- model: beer.Brewery
+  fields: {name: Big Sky Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/de92c47b-3f21-036c-29cb-b3f1ccca94f8',
+    city: Missoula, state: MT, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:27:02.158430+00:00'}
+- model: beer.brewery
+  pk: black-star-co-op
+  fields: {name: Black Star Co-op, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/67744225-1c0e-0354-9377-a90eb597252b',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:32:04.289377+00:00'}
+- model: beer.brewery
+  pk: bluebonnet
+  fields: {name: Bluebonnet Beer Company, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/fd0909c0-951c-4f93-4137-31e63861e1a6',
+    city: Round Rock, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:32:17.240073+00:00'}
+- model: beer.brewery
+  pk: blue-owl
+  fields: {name: Blue Owl Brewing Company, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/50a15fb7-1013-422f-17b7-f24899c1a36a',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:32:48.993217+00:00'}
+- model: beer.brewery
+  pk: boulevard
+  fields: {name: Boulevard Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/8e4aadbf-3ee3-479c-d4d6-4d2da2c37bc3',
+    city: Kansas City, state: MO, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:33:00.533949+00:00'}
+- model: beer.brewery
+  pk: brewers-table
+  fields: {name: Brewer's Table, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
   pk: brouwerij-the-musketeers
-  fields:
-    name: Brouwerij The Musketeers (De Musketiers)
-    state: Belgium
-    created_at: "2016-12-21T18:00:00+00:00"
-    updated_at: "2016-12-21T18:00:00+00:00"
+  fields: {name: Brouwerij The Musketeers (De Musketiers), logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/750d6e3e-8750-2c42-1a5f-14dc9d4c7b06',
+    city: '', state: Belgium, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:33:12.376659+00:00'}
+- model: beer.brewery
+  pk: bull-creek
+  fields: {name: Bull Creek Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/5f9bfaf7-f195-36fe-f84c-656b53b511fa',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:35:08.675630+00:00'}
+- model: beer.brewery
+  pk: circle-brewing
+  fields: {name: Circle Brewing Co., logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/485d5e0f-6b7a-c757-3dca-836780910db0',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:35:18.128649+00:00'}
+- model: beer.brewery
+  pk: deschutes
+  fields: {name: Deschutes, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/9ddeccda-0fb6-9c0b-9b3e-c083358a5d41',
+    city: Bend, state: OR, created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2017-01-05
+      05:38:16.472654+00:00'}
+- model: beer.brewery
+  pk: dogfish-head
+  fields: {name: Dogfish Head, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/6b42cfee-b040-2ab7-98cd-5a4419646011',
+    city: Milton, state: DE, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:38:25.109261+00:00'}
+- model: beer.brewery
+  pk: draughthouse
+  fields: {name: Draughthouse, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/2156522e-dac5-7dc7-b557-854119b7dddc',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:41:58.333157+00:00'}
+- model: beer.brewery
+  pk: epic-brewing
+  fields: {name: Epic Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/4f67357a-e60e-c8f1-d85e-f21c58aba2af',
+    city: Salt Lake City, state: UT, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:42:06.381829+00:00'}
+- model: beer.brewery
+  pk: flix-brewhouse
+  fields: {name: Flix Brewhouse, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/f5ccffaa-7ef5-9c45-de50-5a0de46dfaab',
+    city: Round Rock, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:42:13.621419+00:00'}
+- model: beer.brewery
+  pk: flying-man-brewing
+  fields: {name: Flying Man Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/30ce3327-b2cb-7085-7d05-48d6670c11d5',
+    city: Pflugerville, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:42:22.896776+00:00'}
+- model: beer.brewery
+  pk: founders
+  fields: {name: Founders, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/31a84591-6573-1531-10c3-1f6aab423147',
+    city: Grand Rapids, state: MI, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:42:32.595149+00:00'}
+- model: beer.brewery
+  pk: freetail
+  fields: {name: Freetail Brewing Co, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/b2ff0e20-4622-fce7-ca67-f687af77049d',
+    city: San Antonio, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:44:43.018185+00:00'}
+- model: beer.brewery
+  pk: friends-allies-brewing
+  fields: {name: Friends & Allies Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/a4d56fd9-9e50-9abf-9b02-e71433840bb9',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:44:52.461579+00:00'}
+- model: beer.brewery
+  pk: granger-city-brewing
+  fields: {name: Granger City Brewing Company, logo: '', city: Granger, state: TX,
+    created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2016-12-21
+      18:00:00+00:00'}
+- model: beer.brewery
+  pk: great-divide
+  fields: {name: Great Divide Brewing Company, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/c4220817-1f8b-33ff-2f64-61c0fa1df0c1',
+    city: Denver, state: CO, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:46:28.666542+00:00'}
+- model: beer.brewery
+  pk: hi-sign-brewing
+  fields: {name: Hi Sign Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/e5a4c0b8-b0bd-91ec-6bc1-14b7553ebd3f',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:49:08.560541+00:00'}
+- model: beer.brewery
+  pk: hops-and-grain
+  fields: {name: Hops and Grain, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/247323c2-343e-bed2-f7a6-83f32955341e',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:49:17.375073+00:00'}
+- model: beer.brewery
+  pk: idle-vine-brewing-company
+  fields: {name: Idle Vine Brewing Company, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/23c8a75f-2d82-84d2-48f5-bed43c64e22f',
+    city: Round Rock, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:49:26.865567+00:00'}
+- model: beer.brewery
+  pk: independence-brewing
+  fields: {name: Independence Brewing Co., logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/e545f7f0-2ba9-4201-1e8c-5f83e1293ab3',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:51:10.143003+00:00'}
+- model: beer.brewery
+  pk: infamous-brewing
+  fields: {name: Infamous Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/d0204ede-1ee3-e9e4-2215-34ccd9ab53bd',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:51:20.900944+00:00'}
+- model: beer.brewery
+  pk: jester-king-brewery
+  fields: {name: Jester King Brewery, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/4dca02b5-2c44-eac6-7a5a-434d6ce1dc14',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:51:30.593670+00:00'}
+- model: beer.brewery
+  pk: jolly-pumpkin
+  fields: {name: Jolly Pumpkin, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/ad812429-d749-7646-505a-a42234f36c5d',
+    city: Dexter, state: MI, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:52:34.475802+00:00'}
+- model: beer.brewery
+  pk: karmala-brewing
+  fields: {name: Karmala Brewing, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: lagunitas
+  fields: {name: Lagunitas, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/e33b21b7-644f-7012-af0b-4edd159a2eab',
+    city: '', state: CA, created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2017-01-05
+      05:54:00.062649+00:00'}
+- model: beer.brewery
+  pk: lakewood-brewing
+  fields: {name: Lakewood Brewing Co., logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/c9bb3f7b-00d4-3ec0-b9ca-dab93069ca0c',
+    city: Dallas, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:54:08.997465+00:00'}
+- model: beer.brewery
+  pk: last-stand-brewing
+  fields: {name: Last Stand Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/22586b1e-32e3-c7c5-476f-be84317e343b',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:54:25.559196+00:00'}
+- model: beer.brewery
+  pk: lazarus-brewing
+  fields: {name: Lazarus Brewing, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: live-oak-brewing
+  fields: {name: Live Oak Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/6b92a507-dab3-9695-d9a5-cdf94de3d9c5',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-05 05:18:36.508398+00:00'}
+- model: beer.brewery
+  pk: new-belgium
+  fields: {name: New Belgium, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/9b2d2fb3-97f2-c838-5fc4-4122039a3d9c',
+    city: Fort Collins, state: CO, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 17:27:45.857934+00:00'}
+- model: beer.brewery
+  pk: nxnw
+  fields: {name: NXNW, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/b74b73b4-7b91-7e81-17c1-ae72b33e35b2',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 17:28:08.508456+00:00'}
+- model: beer.brewery
+  pk: oasis-brewing
+  fields: {name: Oasis Texas Brewing Company, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/75931903-167a-99ef-57b1-ec34fdea3b96',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 17:28:18.495089+00:00'}
+- model: beer.brewery
+  pk: ommegang
+  fields: {name: Ommegang, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/dd38a498-a766-c91f-4223-048abd0495df',
+    city: Cooperstown, state: NY, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 17:30:09.474685+00:00'}
+- model: beer.brewery
+  pk: orf-brewing
+  fields: {name: Orf Brewing, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/c5bcdbfd-bb24-63d5-eecd-2eea90b0c2cc',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 18:42:35.448027+00:00'}
+- model: beer.brewery
+  pk: oskar-blues
+  fields: {name: Oskar Blues, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/0e4e328c-003e-61a6-93f7-17639df1ffae',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 18:42:43.849399+00:00'}
+- model: beer.brewery
+  pk: pinthouse-pizza
+  fields: {name: Pinthouse Pizza, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/59c197e3-d04e-37e9-0c13-c395195e819b',
+    city: Austin, state: TX, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 18:43:19.470094+00:00'}
+- model: beer.brewery
+  pk: prairie-artisan-ales
+  fields: {name: Prairie Artisan Ales, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/68eabef0-e030-c096-9914-ff1dd5f93ede',
+    city: Krebs, state: OK, created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2017-01-06
+      18:43:31.046984+00:00'}
+- model: beer.brewery
+  pk: red-horn-brewery
+  fields: {name: Red Horn Coffee House and Brewery, logo: '', city: Cedar Park, state: TX,
+    created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2016-12-21
+      18:00:00+00:00'}
+- model: beer.brewery
+  pk: rentsch-brewery
+  fields: {name: Rentsch Brewery, logo: '', city: Georgetown, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: samuel-adams
+  fields: {name: Samuel Adams, logo: '', city: boston, state: MA, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: san-gabriel-river-brewing
+  fields: {name: San Gabriel River Brewing Co, logo: '', city: Liberty Hill, state: TX,
+    created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2016-12-21
+      18:00:00+00:00'}
+- model: beer.brewery
+  pk: save-the-world-brewing
+  fields: {name: Save The World Brewing, logo: '', city: Marble Falls, state: TX,
+    created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2016-12-21
+      18:00:00+00:00'}
+- model: beer.brewery
+  pk: sierra-nevada
+  fields: {name: Sierra Nevada, logo: '', city: Chico, state: CA, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: solid-rock-brewing
+  fields: {name: Solid Rock Brewing, logo: '', city: Spicewood, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: south-austin-brewery
+  fields: {name: South Austin Brewery, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: southern-heights-brewing
+  fields: {name: Southern Heights Brewing, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: st-elmo-brewing
+  fields: {name: St Elmo Brewing, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: stone-brewing
+  fields: {name: Stone Brewing, logo: '', city: Escondido, state: CA, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: strange-land-brewery
+  fields: {name: Strange Land Brewery, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: suds-monkey-brewing
+  fields: {name: Suds Monkey Brewing, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: texas-beer-company
+  fields: {name: Texas Beer Company, logo: '', city: Taylor, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: texian-brewing
+  fields: {name: Texian Brewing Company, logo: '', city: Richmond, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: thirsty-planet
+  fields: {name: Thirsty Planet, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: thousand-oaks-brewing
+  fields: {name: Thousand Oaks Brewing, logo: '', city: Cedar Park, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: treaty-oaks-brewing
+  fields: {name: Treaty Oaks Brewing, logo: '', city: Dripping Springs, state: TX,
+    created_at: !!timestamp '2016-12-21 18:00:00+00:00', updated_at: !!timestamp '2016-12-21
+      18:00:00+00:00'}
+- model: beer.brewery
+  pk: twisted-x-brewing
+  fields: {name: Twisted X Brewing, logo: '', city: Dripping Springs, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: two-wheel-brewing
+  fields: {name: Two Wheel Brewing, logo: '', city: Buda, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: uncle-billys
+  fields: {name: Uncle Billy's, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: vander-ghinste
+  fields: {name: Omer Vander Ghinste Brewery, logo: 'https://bieraustin.s3-us-west-2.amazonaws.com/beerfridge/bc59a0ba-9b89-3dcc-6eeb-a1f8a3da9c41',
+    city: '', state: Belgiumx, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2017-01-06 17:30:20.202951+00:00'}
+- model: beer.brewery
+  pk: victory
+  fields: {name: Victory Brewing Co, logo: '', city: Downington, state: PA, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: whitestone-brewery
+  fields: {name: Whitestone Brewery, logo: '', city: Cedar Park, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: zilker-brewing-company
+  fields: {name: Zilker Brewing Company, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}

@@ -112,17 +112,18 @@ var PageController = function() {
         });
 
         $('#image-modal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var image = button.data('image');
+            var trigger = $(event.relatedTarget);
             var modal = $(this);
-            modal.find('.modal-body img').prop('src', image);
+            modal.find('.modal-body img').prop('src', trigger.data('image'));
         })
 
         $('#image-upload-modal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
+            var trigger = $(event.relatedTarget);
             var modal = $(this);
-            modal.find('.modal-body form').prop('action', button.data('uri'));
-            modal.find('.modal-body form input[type=file]').prop('name', button.data('field'));
+            modal.find('.modal-body form .result').removeClass('hide alert-success alert-danger').html('');
+            modal.find('.modal-body form legend').html('Add an Image: '+trigger.data('title'));
+            modal.find('.modal-body form').prop('action', trigger.data('uri'));
+            modal.find('.modal-body form input[type=file]').prop('name', trigger.data('field'));
         })
 
         $(document).on('click', '.link.login', function(e) {

@@ -1,420 +1,210 @@
-- fields:
-    brewery: 512-brewing
-    created_at: '2016-12-21T18:00:00+00:00'
-    location: studio-fridge
-    name: (512) Whiskey Barrel Aged Double Pecan Porter (2015)
-    quantity: 1
-    style: American Porter
-    updated_at: '2016-12-21T18:00:00+00:00'
-  model: beer.Beer
+- model: beer.beer
   pk: 1
-- fields:
-    brewery: 512-brewing
-    created_at: '2016-12-21T18:00:00+00:00'
-    location: studio-fridge
-    name: (512) Whiskey Barrel Aged Double Pecan Porter (2014)
-    quantity: 1
-    style: American Porter
-    updated_at: '2016-12-21T18:00:00+00:00'
-  model: beer.Beer
+  fields: {name: (512) Whiskey Barrel Aged Double Pecan Porter (2015), brewery: 512-brewing,
+    location: studio-fridge, style: American Porter, image: '', quantity: 1, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.beer
   pk: 2
-- fields:
-    brewery: 512-brewing
-    created_at: '2016-12-21T18:00:00+00:00'
-    location: studio-fridge
-    name: (512) Whiskey Barrel Aged Double Pecan Porter (2013)
-    quantity: 1
-    style: American Porter
-    updated_at: '2016-12-21T18:00:00+00:00'
-  model: beer.Beer
+  fields: {name: (512) Whiskey Barrel Aged Double Pecan Porter (2014), brewery: 512-brewing,
+    location: studio-fridge, style: American Porter, image: '', quantity: 1, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.beer
   pk: 3
-- fields:
-    brewery: sierra-nevada
-    created_at: '2016-12-21T18:00:00+00:00'
-    location: studio
-    name: Nooner
-    quantity: 2
-    style: German-Style Pilsener
-    updated_at: '2016-12-21T18:00:00+00:00'
-  model: beer.Beer
+  fields: {name: (512) Whiskey Barrel Aged Double Pecan Porter (2013), brewery: 512-brewing,
+    location: studio-fridge, style: American Porter, image: '', quantity: 1, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.beer
   pk: 4
-- fields:
-    brewery: sierra-nevada
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Pale Ale
-    quantity: '3'
-    style: American Pale Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Nooner, brewery: 512-brewing, location: studio, style: German-Style
+      Pilsener, image: '', quantity: 2, created_at: !!timestamp '2016-12-21 18:00:00+00:00',
+    updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.beer
   pk: 5
-- fields:
-    brewery: sierra-nevada
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Hoppy Lager
-    quantity: '2'
-    style: Inida Pale Lager
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Pale Ale, brewery: sierra-nevada, location: studio, style: American
+      Pale Ale, image: '', quantity: 3, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 6
-- fields:
-    brewery: sierra-nevada
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: "11.5\xB0 Plato"
-    quantity: '2'
-    style: Session IPA
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Hoppy Lager, brewery: sierra-nevada, location: studio, style: Inida
+      Pale Lager, image: '', quantity: 2, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 7
-- fields:
-    brewery: samuel-adams
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Winter Lager
-    quantity: '1'
-    style: American Amber Lager
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: "11.5\xB0 Plato", brewery: sierra-nevada, location: studio, style: Session
+      IPA, image: '', quantity: 2, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 8
-- fields:
-    brewery: stone-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Mocha IPA
-    quantity: '1'
-    style: American IPA
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Winter Lager, brewery: samuel-adams, location: studio, style: American
+      Amber Lager, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 9
-- fields:
-    brewery: new-belgium
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Clutch
-    quantity: '1'
-    style: Sour Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Mocha IPA, brewery: stone-brewing, location: studio, style: American
+      IPA, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 10
-- fields:
-    brewery: stone-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Double Bastard
-    quantity: '1'
-    style: American Strong Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Clutch, brewery: new-belgium, location: studio, style: Sour Stout,
+    image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00', updated_at: !!timestamp '2016-12-27
+      17:05:11+00:00'}
+- model: beer.beer
   pk: 11
-- fields:
-    brewery: stone-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Lucky Bastard
-    quantity: '1'
-    style: American Strong Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Double Bastard, brewery: stone-brewing, location: studio, style: American
+      Strong Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 12
-- fields:
-    brewery: epic-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Brainless on Peaches
-    quantity: '1'
-    style: Belgian-Style Blonde Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Lucky Bastard, brewery: stone-brewing, location: studio, style: American
+      Strong Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 13
-- fields:
-    brewery: founders
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Lizard of Koz
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Brainless on Peaches, brewery: epic-brewing, location: studio, style: Belgian-Style
+      Blonde Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 14
-- fields:
-    brewery: ballast-point
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Coconut Victory at Sea
-    quantity: '1'
-    style: American Imperial Porter
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Lizard of Koz, brewery: founders, location: studio, style: American
+      Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 15
-- fields:
-    brewery: adelberts
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Oaked Triple B
-    quantity: '1'
-    style: Belgian-Style Tripel
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Coconut Victory at Sea, brewery: ballast-point, location: studio,
+    style: American Imperial Porter, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 16
-- fields:
-    brewery: texian-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: The Liberty
-    quantity: '1'
-    style: Brett IPA
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Oaked Triple B, brewery: adelberts, location: studio, style: Belgian-Style
+      Tripel, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 17
-- fields:
-    brewery: jolly-pumpkin
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Bam di Castagna
-    quantity: '1'
-    style: American Sour
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: The Liberty, brewery: texian-brewing, location: studio, style: Brett
+      IPA, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 18
-- fields:
-    brewery: lakewood-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Bourbon Barrel Temptress
-    quantity: '1'
-    style: English-Style Sweet Stout (Milk Stout)
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Bam di Castagna, brewery: jolly-pumpkin, location: studio, style: American
+      Sour, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 19
-- fields:
-    brewery: austin-beerworks
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Sputnik (2016)
-    quantity: '4'
-    style: American Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Bourbon Barrel Temptress, brewery: lakewood-brewing, location: studio,
+    style: English-Style Sweet Stout (Milk Stout), image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 20
-- fields:
-    brewery: anderson-valley
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Barney Flats
-    quantity: '1'
-    style: English-Style Oatmeal Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Sputnik (2016), brewery: austin-beerworks, location: studio, style: American
+      Stout, image: '', quantity: 4, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 21
-- fields:
-    brewery: anderson-valley
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Winter Solstice
-    quantity: '1'
-    style: Winter Warmer
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Barney Flats, brewery: anderson-valley, location: studio, style: English-Style
+      Oatmeal Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 22
-- fields:
-    brewery: avery-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Majharaja IPA
-    quantity: '1'
-    style: Imperial India Pale Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Winter Solstice, brewery: anderson-valley, location: studio, style: Winter
+      Warmer, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 23
-- fields:
-    brewery: independence-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Brown Sabbath
-    quantity: '1'
-    style: Vienna-Style Lager
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Majharaja IPA, brewery: avery-brewing, location: studio, style: Imperial
+      India Pale Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 24
-- fields:
-    brewery: boulevard
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: 'Love Child #7'
-    quantity: '1'
-    style: American Sour
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Brown Sabbath, brewery: independence-brewing, location: studio, style: Vienna-Style
+      Lager, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 25
-- fields:
-    brewery: avery-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Vanilla Bean Stout
-    quantity: '1'
-    style: American Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: 'Love Child #7', brewery: boulevard, location: studio, style: American
+      Sour, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 26
-- fields:
-    brewery: freetail
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Cherry Bexarliner
-    quantity: '1'
-    style: Berliner-Style Weisse
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Vanilla Bean Stout, brewery: avery-brewing, location: studio, style: American
+      Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 27
-- fields:
-    brewery: prairie-artisan-ales
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Christmas Bomb! (2016)
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Cherry Bexarliner, brewery: freetail, location: studio, style: Berliner-Style
+      Weisse, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 28
-- fields:
-    brewery: prairie-artisan-ales
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Pirate Bomb! (2016)
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Christmas Bomb! (2016), brewery: prairie-artisan-ales, location: studio,
+    style: American Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 29
-- fields:
-    brewery: prairie-artisan-ales
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Pirate Noir
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Pirate Bomb! (2016), brewery: prairie-artisan-ales, location: studio,
+    style: American Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 30
-- fields:
-    brewery: prairie-artisan-ales
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Cofee Noir
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Pirate Noir, brewery: prairie-artisan-ales, location: studio, style: American
+      Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 31
-- fields:
-    brewery: big-sky-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Ivan the Terrible
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Cofee Noir, brewery: prairie-artisan-ales, location: studio, style: American
+      Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 32
-- fields:
-    brewery: dogfish-head
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Beer for Breakfast
-    quantity: '1'
-    style: American Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Ivan the Terrible, brewery: big-sky-brewing, location: studio, style: American
+      Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 33
-- fields:
-    brewery: vander-ghinste
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Oud Bruin
-    quantity: '1'
-    style: Belgian-Style Flanders
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Beer for Breakfast, brewery: dogfish-head, location: studio, style: American
+      Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 34
-- fields:
-    brewery: victory
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Hop Ranch
-    quantity: '1'
-    style: Imperial India Pale Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Oud Bruin, brewery: vander-ghinste, location: studio, style: Belgian-Style
+      Flanders, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 35
-- fields:
-    brewery: deschutes
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Sagefight
-    quantity: '1'
-    style: Imperial India Pale Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Hop Ranch, brewery: victory, location: studio, style: Imperial India
+      Pale Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27 17:05:11+00:00',
+    updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 36
-- fields:
-    brewery: ommegang
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Great Beyond
-    quantity: '1'
-    style: Imperial India Pale Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Sagefight, brewery: deschutes, location: studio, style: Imperial
+      India Pale Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 37
-- fields:
-    brewery: great-divide
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Chocolate Oak Aged Yeti (2012)
-    quantity: '6'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Great Beyond, brewery: ommegang, location: studio, style: Imperial
+      India Pale Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 38
-- fields:
-    brewery: stone-brewing
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Smoked Porter w/ Vanilla Bean (2012)
-    quantity: '1'
-    style: American Porter
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Chocolate Oak Aged Yeti (2012), brewery: great-divide, location: studio,
+    style: American Imperial Stout, image: '', quantity: 6, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 39
-- fields:
-    brewery: great-divide
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Oatmeal Yeti (2013)
-    quantity: '1'
-    style: American Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Smoked Porter w/ Vanilla Bean (2012), brewery: stone-brewing, location: studio,
+    style: American Porter, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 40
-- fields:
-    brewery: dogfish-head
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: 120 Mintue IPA (2013)
-    quantity: '1'
-    style: Imperial India Pale Ale
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: Oatmeal Yeti (2013), brewery: great-divide, location: studio, style: American
+      Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 41
-- fields:
-    brewery: brouwerij-the-musketeers
-    created_at: '2016-12-27T17:05:11+00:00'
-    location: studio
-    name: Troubador (2012)
-    quantity: '1'
-    style: Russian Imperial Stout
-    updated_at: '2016-12-27T17:05:11+00:00'
-  model: beer.Beer
+  fields: {name: 120 Mintue IPA (2013), brewery: dogfish-head, location: studio, style: Imperial
+      India Pale Ale, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- model: beer.beer
   pk: 42
+  fields: {name: Troubador (2012), brewery: brouwerij-the-musketeers, location: studio,
+    style: Russian Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
+      17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
