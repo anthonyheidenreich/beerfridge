@@ -66,10 +66,13 @@ BEER_STYLES = {
     ],
     'Stouts': [
         'American Imperial Stout',
+        'American Imperial Stout (Barrel Aged)',
         'Russian Imperial Stout',
         'American Stout',
+        'American Stout (Barrel Aged)',
         'English-Style Oatmeal Stout',
         'English-Style Sweet Stout (Milk Stout)',
+        'Oyster Stout',
         'Irish-Style Dry Stout',
     ],
     'Bocks': [

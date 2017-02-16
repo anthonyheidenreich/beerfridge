@@ -350,3 +350,71 @@
   pk: zilker-brewing-company
   fields: {name: Zilker Brewing Company, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
       18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: birra-del-borgo
+  fields: {name: Birra del Borgo, logo: '', city: Borgorose, state: Italy, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: breckenridge
+  fields: {name: Breckenridge, logo: '', city: Littleton, state: CO, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: brooklyn-brewery
+  fields: {name: Brooklyn Brewery, logo: '', city: Brooklyn, state: NY, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: calavera
+  fields: {name: Calavera, logo: '', city: Tlalnepantla, state: Mexico, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: deep-ellum
+  fields: {name: Deep Ellum, logo: '', city: Dallas, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: eviltwin-brewing
+  fields: {name: Evil Twin Brewing, logo: '', city: Brooklyn, state: NY, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: full-sail
+  fields: {name: Full Sail, logo: '', city: Hood River, state: OR, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: goliad-brewery
+  fields: {name: Goliad Brewery, logo: '', city: Goliad, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: green-flash
+  fields: {name: Green Flash, logo: '', city: San Diego, state: CA, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: new-holland-brewing
+  fields: {name: New Holland Brewing, logo: '', city: Holland, state: MI, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: north-coast
+  fields: {name: North Coast, logo: '', city: Fort Bragg, state: CA, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: ranger-creek
+  fields: {name: Ranger Creek, logo: '', city: San Antonio, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: revolver-brewing
+  fields: {name: Revolver Brewing, logo: '', city: Austin, state: TX, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: ridgeway-brewing
+  fields: {name: Ridgeway Brewing, logo: '', city: South Stoke, state: UK, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: rogue
+  fields: {name: Rogue, logo: '', city: Newport, state: OR, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: southern-tier
+  fields: {name: Southern Tier, logo: '', city: Lakewood, state: NY, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}
+- model: beer.brewery
+  pk: two-roads
+  fields: {name: Two Roads, logo: '', city: Stratford, state: CT, created_at: !!timestamp '2016-12-21
+      18:00:00+00:00', updated_at: !!timestamp '2016-12-21 18:00:00+00:00'}

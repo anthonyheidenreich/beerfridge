@@ -208,3 +208,313 @@
   fields: {name: Troubador (2012), brewery: brouwerij-the-musketeers, location: studio,
     style: Russian Imperial Stout, image: '', quantity: 1, created_at: !!timestamp '2016-12-27
       17:05:11+00:00', updated_at: !!timestamp '2016-12-27 17:05:11+00:00'}
+- fields:
+    brewery: adelberts
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Barrel of Love
+    quantity: '1'
+    style: American Stout (Barrel Aged)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 73
+- fields:
+    brewery: austin-beerworks
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Sputnik (2016)
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 43
+- fields:
+    brewery: avery-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Tweak
+    quantity: '1'
+    style: American Stout (Barrel Aged)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 44
+- fields:
+    brewery: birra-del-borgo
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Perle ai Porci
+    quantity: '1'
+    style: Oyster Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 45
+- fields:
+    brewery: breckenridge
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Twenty Five Imperial Vanilla Porter
+    quantity: '1'
+    style: American Imperial Porter
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 46
+- fields:
+    brewery: breckenridge
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: 72 Imperial
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 47
+- fields:
+    brewery: brooklyn-brewery
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Black Ops
+    quantity: '1'
+    style: American Stout (Barrel Aged)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 48
+- fields:
+    brewery: calavera
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Mexican Imperial Stout
+    quantity: '1'
+    style: American Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 49
+- fields:
+    brewery: deep-ellum
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Cherry Chocolate Double Brown Stout
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 50
+- fields:
+    brewery: eviltwin-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Ashtray Heart
+    quantity: '1'
+    style: American Porter
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 51
+- fields:
+    brewery: eviltwin-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Yin
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 52
+- fields:
+    brewery: full-sail
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Imperial Stout
+    quantity: '1'
+    style: American Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 53
+- fields:
+    brewery: goliad-brewery
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Goliad
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 54
+- fields:
+    brewery: green-flash
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Silva Stout
+    quantity: '1'
+    style: American Stout (Barrel Aged)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 55
+- fields:
+    brewery: lagunitas
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Cappuccino Stout
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 56
+- fields:
+    brewery: new-holland-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Dragon's Milk (Bourbon Barrel Aged)
+    quantity: '1'
+    style: English-Style Sweet Stout (Milk Stout)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 57
+- fields:
+    brewery: north-coast
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Old Rasputin
+    quantity: '1'
+    style: Russian Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 58
+- fields:
+    brewery: ommegang
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Shadow Brewer
+    quantity: '1'
+    style: American Imperial Stout (Barrel Aged)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 59
+- fields:
+    brewery: ranger-creek
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Strawberry Milk Stout
+    quantity: '1'
+    style: English-Style Sweet Stout (Milk Stout)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 60
+- fields:
+    brewery: revolver-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Mother's Little Fracker
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 61
+- fields:
+    brewery: ridgeway-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Lump of Coal
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 62
+- fields:
+    brewery: rogue
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Rolling Thunder
+    quantity: '1'
+    style: American Stout (Barrel Aged)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 63
+- fields:
+    brewery: southern-tier
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Mokah
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 64
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Russian Imperial Stout (2012)
+    quantity: '1'
+    style: Russian Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 65
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Coffee Milk Stout
+    quantity: '1'
+    style: English-Style Sweet Stout (Milk Stout)
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 66
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Espresso Imperial Stout (2013)
+    quantity: '1'
+    style: Russian Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 67
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Bitter Chocolate Oatmeal Stout
+    quantity: '1'
+    style: English-Style Oatmeal Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 68
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: W00tstout
+    quantity: '1'
+    style: American Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 69
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Russian Imperial Stout (2016)
+    quantity: '1'
+    style: American Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 70
+- fields:
+    brewery: stone-brewing
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Belgo Anise Russion Imperial Stout (2011)
+    quantity: '1'
+    style: Russian Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 71
+- fields:
+    brewery: two-roads
+    created_at: '2017-02-16T01:01:54+00:00'
+    location: studio
+    name: Igor's Dream
+    quantity: '1'
+    style: Russian Imperial Stout
+    updated_at: '2017-02-16T01:01:54+00:00'
+  model: beer.Beer
+  pk: 72
