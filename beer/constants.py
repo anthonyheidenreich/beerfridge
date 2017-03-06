@@ -125,6 +125,7 @@ for styles in BEER_STYLES.values():
 
 GLASSWARE_STYLES = [
     ('BOOT', 'Boot'),
+    ('CAN', 'Can'),
     ('MUG', 'Mug'),
     ('GOBLET', 'Goblet'),
     ('FLUTE', 'Flute'),
