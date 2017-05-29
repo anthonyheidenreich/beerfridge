@@ -40,11 +40,9 @@ class Beer(models.Model):
 
 
 class Glassware(models.Model):
-    brewery = models.ForeignKey(Brewery, null=True, on_delete=models.CASCADE)
+    brewery = models.CharField(max_length=255, null=False)
     style = models.CharField(choices=GLASSWARE_STYLES, default='python', max_length=100)
     image = models.CharField(max_length=255, blank=True)
-    description = models.CharField(max_length=201)
-    quantity = models.PositiveIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

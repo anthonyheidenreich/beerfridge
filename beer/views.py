@@ -22,6 +22,13 @@ def options(request):
     })
 
 
+def glassware(request):
+    context = {
+        'glasswares':  Glassware.objects.all
+    }
+    return render(request, 'glassware.html', context)
+
+
 def index(request):
     context = { }
     return render(request, 'index.html', context)
