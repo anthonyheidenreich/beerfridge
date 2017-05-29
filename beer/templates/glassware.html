@@ -54,8 +54,8 @@
           <div class="container-fluid">
             <ul class="list-inline">
               {% for glassware in glasswares %}
-              <li class="col-sm-3">
-                <a data-image="{{ glassware.image }}" data-toggle="modal" data-target="#image-modal" >{{ glassware.brewery }}</a>
+              <li class="col-lg-2 col-sm-3 col-xs-6">
+                <span class="btn" data-image="{{ glassware.image }}" data-toggle="modal" data-target="#image-modal" >{{ glassware.brewery }}</span>
               </li>
               {% endfor %}
             </ul>
